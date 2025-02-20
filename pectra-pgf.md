@@ -19,22 +19,15 @@ deployed.
 
 ## Team members:
 
-TODO
+Ramana Kumar is the lead contributor for the Verifereum project, and will take the lead on this upgrade project too.
 
-    Name
-        Role
-
-Include links to profiles or relevant previous projects.
+We will also accept and encourage contributions from the open-source community supporting Verifereum, including (at time of writing) [six additional GitHub contributors](https://github.com/verifereum/verifereum/graphs/contributors).
 
 ## Background
 
-TODO
+Ramana has a PhD in computer science and has done extensive academic research on formal verification (https://scholar.google.com/citations?user=OyX1-qYAAAAJ&hl=en&oi=sra). He is a world leading expert on compiler verification and a key contributor to CakeML, a verified implementation of ML and one of a handful of formally verified compilers. An active contributor to the liquid staking derivative ecosystem on Ethereum, Ramana combines his expertise in formal verification with a deep knowledge of the EVM. His background makes him uniquely qualified to build the Verifereum EVM formal verification framework, and Verifereum-based projects for application verification (including via verified compilation).
 
-Provide context and experience:
-
-    Why is the team suited to deliver on this proposal?
-    Link to prior work, GitHub repositories
-    Link to current active projects
+The project is entirely free and open source, hosted on [GitHub here](https://github.com/verifereum/verifereum).
 
 # Relevant Pectra EIPs
 
