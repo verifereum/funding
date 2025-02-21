@@ -13,11 +13,14 @@ Be clear to say: at the end of the grant that we have something actually usable,
   - Verified compiler for Vyper that produces the same bytecode as the _latest released_ unverified compiler.
 
     What is it verified to do?
-        Preserve the semantics of the source program (i.e. when a transaction calls a Vyper contract).
+
+    - Preserve the semantics of the source program (i.e. when a transaction calls a Vyper contract).
+
     What is included in the semantics?
-        1. State changes to the EVM (includes revert/succeed, includes balance changes to pay for execution)
-        2. Logs/events
-        3. Gas usage?
+
+    1. State changes to the EVM (includes revert/succeed, includes balance changes to pay for execution)
+    2. Logs/events
+    3. Gas usage?
 
   - Help Vyper become more explicit about the specification of their language
     - including things like memory/storage layout
@@ -26,32 +29,33 @@ Be clear to say: at the end of the grant that we have something actually usable,
   - Academic output describing this work, i.e. papers
 
     Which papers?
-        - Semantics of Vyper
 
-        - Semantics of EVM in HOL (Verifereum)
-          - executable
-          - completeness: what does it mean?
-          - uptodate + maintanable
-          - usable for what?
+    - Semantics of Vyper
 
-        - Verification of parts of the Vyper compiler, e.g.
-          - Formalising the Venom IR
-          - Formalising some of the IR->IR passes
+    - Semantics of EVM in HOL (Verifereum)
+      - executable
+      - completeness: what does it mean?
+      - uptodate + maintanable
+      - usable for what?
 
-        - A Verified Compiler for Vyper
-          - e.g. unoptimised Vyper -> EVM algorithm with semantics preservation proof
+    - Verification of parts of the Vyper compiler, e.g.
+      - Formalising the Venom IR
+      - Formalising some of the IR->IR passes
 
-        - End-to-end verification of Vyper programs (i.e., including examples of verified source programs)
+    - A Verified Compiler for Vyper
+      - e.g. unoptimised Vyper -> EVM algorithm with semantics preservation proof
 
-        - Verification of the optimisations
+    - End-to-end verification of Vyper programs (i.e., including examples of verified source programs)
 
-        - Practical verified compilation for Vyper applications
-          - somewhat optimising verified compiler
-          - verifying (i.e. produces hints) optimising unverified compiler (the Python one)
-          - some bytecode equivalence automatic checking of the outputs
+    - Verification of the optimisations
 
-        - How we keep the verification up to date with changing EVM and changing Vyper
-           - e.g. CI methodology, AI proof repair, including formal stuff in the dev methodology somehow, ...
+    - Practical verified compilation for Vyper applications
+      - somewhat optimising verified compiler
+      - verifying (i.e. produces hints) optimising unverified compiler (the Python one)
+      - some bytecode equivalence automatic checking of the outputs
+
+    - How we keep the verification up to date with changing EVM and changing Vyper
+       - e.g. CI methodology, AI proof repair, including formal stuff in the dev methodology somehow, ...
 
 ## How does Vyper differ from conventional compilers?
 
