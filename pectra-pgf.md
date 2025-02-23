@@ -16,9 +16,9 @@ We will also accept and encourage contributions from the open-source community s
 
 ## Background
 
-Ramana has a PhD in computer science and has done extensive [academic research](https://scholar.google.com/citations?user=OyX1-qYAAAAJ) on formal verification. He is a world leading expert on compiler verification and a key contributor to [CakeML](https://cakeml.org), a verified implementation of ML and one of a handful of formally verified compilers. An active contributor to the Rocket Pool liquid staking ecosystem on Ethereum, and user of several decentralised finance (DeFi) protocols, Ramana combines his expertise in formal verification with a deep knowledge of the EVM. His background makes him uniquely qualified to build the Verifereum EVM formal verification framework, and Verifereum-based projects for application verification (including via verified compilation).
+Ramana has a PhD in computer science and has done extensive [academic research](https://scholar.google.com/citations?user=OyX1-qYAAAAJ) on formal verification. He is a world leading expert on compiler verification and a key contributor to [CakeML](https://cakeml.org), a verified implementation of ML and one of a handful of formally verified compilers. An active contributor to the Rocket Pool liquid staking ecosystem on Ethereum, user of several decentralised finance (DeFi) protocols, and smart contract author himself, Ramana combines his expertise in formal verification with a deep knowledge of the EVM. His background makes him uniquely qualified to build the Verifereum EVM formal verification framework, and Verifereum-based projects for application verification (including via verified compilation).
 
-The project is entirely free and open source, hosted on [GitHub here](https://github.com/verifereum/verifereum).
+The Verifereum project is entirely free and open source, with all code available and kept up-to-date on [GitHub](https://github.com/verifereum/verifereum).
 
 # Relevant Pectra EIPs
 
@@ -75,8 +75,8 @@ We will follow the same proof-engineering practices that have produced Verifereu
 
 # Timeline and Budget Allocation
 
+In deciding on the budget for this work, we are considering that hopefully Verifereum will be supported by additional grants concurrently. Hence, we have reduced the requested amount compared to the expected total engineering cost, which would be closer to $2,500 per EIP on average. If this programme is willing and able to fund the project at the higher level we would be very grateful for that support.
+
 We aim to deliver on average 2 EIPs per week at a cost of $1,000 each, to be used entirely to pay stipends for the engineering work. Although some EIPs will be more difficult than others, the budget is amortised over them all. There are 10 relevant EIPs.
 
-In deciding on the budget for this work, we are considering that hopefully Verifereum will be supported by additional grants concurrently. Hence, we have reduced the requested amount compared to the expected total engineering cost, which would be closer to $2,500 per EIP on average. If this programme is willing and able to fund the project at the higher level it would be very helpful.
-
-Total Budget: $10,000, 5 weeks
+Total Budget: $10,000 (or $25,000 at the higher level), 5 weeks
