@@ -16,7 +16,7 @@ We will also accept and encourage contributions from the open-source community s
 
 ## Background
 
-Ramana has a PhD in computer science and has done extensive academic research on formal verification (https://scholar.google.com/citations?user=OyX1-qYAAAAJ&hl=en&oi=sra). He is a world leading expert on compiler verification and a key contributor to CakeML, a verified implementation of ML and one of a handful of formally verified compilers. An active contributor to the liquid staking derivative ecosystem on Ethereum, Ramana combines his expertise in formal verification with a deep knowledge of the EVM. His background makes him uniquely qualified to build the Verifereum EVM formal verification framework, and Verifereum-based projects for application verification (including via verified compilation).
+Ramana has a PhD in computer science and has done extensive [academic research](https://scholar.google.com/citations?user=OyX1-qYAAAAJ) on formal verification. He is a world leading expert on compiler verification and a key contributor to [CakeML](https://cakeml.org), a verified implementation of ML and one of a handful of formally verified compilers. An active contributor to the Rocket Pool liquid staking ecosystem on Ethereum, and user of several decentralised finance (DeFi) protocols, Ramana combines his expertise in formal verification with a deep knowledge of the EVM. His background makes him uniquely qualified to build the Verifereum EVM formal verification framework, and Verifereum-based projects for application verification (including via verified compilation).
 
 The project is entirely free and open source, hosted on [GitHub here](https://github.com/verifereum/verifereum).
 
@@ -49,9 +49,9 @@ This project builds on the existing Verifereum EVM which formalises the Dencun s
 
 Expected outputs:
 
-1. A freely available complete formal specification of the EVM defined in the HOL4 theorem prover, building on the existing specification available at https://github.com/verifereum/verifereum.
+1. A freely available complete formal specification of the EVM defined in the [HOL4 theorem prover](https://hol-theorem-prover.org), building on the existing specification available in the [Verifereum repository](https://github.com/verifereum/verifereum).
 
-2. Theorems demonstrating that the above specification passes the same EVM test suites (when the tests have been updated for the Pectra upgrade) that are used to validate Ethereum's execution clients, i.e., https://github.com/ethereum/tests and https://github.com/ethereum/execution-spec-tests.
+2. Theorems demonstrating that the above specification passes the same EVM test suites (when the tests have been updated for the Pectra upgrade) that are used to validate Ethereum's execution clients, i.e., the [legacy](https://github.com/ethereum/tests) and [future](https://github.com/ethereum/execution-spec-tests) test suites.
 
 # Methodology
 
@@ -68,10 +68,10 @@ We will follow the same proof-engineering practices that have produced Verifereu
    - Iteration on the semantics as required to ensure the Pectra tests all pass
 
 3. Tools and Technologies:
-   - HOL4 theorem prover for formal specification
+   - [HOL4 theorem prover](https://hol-theorem-prover.org) for formal specification
    - Ethereum test suites
-   - Git (including GitHub) for version control and collaboration
-   - Zulip for discussion and onboarding new collaborators
+   - Git (including [GitHub](https://github.com/verifereum)) for version control and collaboration
+   - [Zulip](https://hol.zulipchat.com) for discussion and onboarding new collaborators
 
 # Timeline and Budget Allocation
 
