@@ -2,7 +2,7 @@
 
 The proposed project is: Update the formal semantics of the EVM defined in Verifereum for the Pectra upgrade.
 
-Verifereum is a formal model of the EVM in higher-order logic intended to support a broad range of formal verification uses, primarily as the basis for proving comprehensive theorems about Ethereum applications (i.e. decentralised applications / smart contracts) ensuring that they are implemented correctly and have desirable/intended properties such as not being exploitable by malicious on-chain interactions.
+Verifereum is a formal model of the EVM in higher-order logic intended to support a broad range of formal verification uses, primarily as the basis for proving comprehensive theorems about Ethereum applications (i.e., decentralised applications / smart contracts) ensuring that they are implemented correctly and have desirable/intended properties such as not being exploitable by malicious on-chain interactions.
 
 The Verifereum project aims to maintain an up-to-date EVM semantics that accurately models on-chain execution for all applications live on mainnet (and other EVM chains), and hence to remain relevant as Ethereum hardforks are deployed.
 
@@ -12,7 +12,7 @@ The Verifereum project aims to maintain an up-to-date EVM semantics that accurat
 
 Ramana Kumar is the lead contributor for the Verifereum project, and will take the lead on this upgrade project too.
 
-We will also accept and encourage contributions from the open-source community supporting Verifereum, including (at time of writing) [six additional GitHub contributors](https://github.com/verifereum/verifereum/graphs/contributors).
+We also accept and encourage contributions from the open-source community supporting Verifereum, including (at time of writing) [seven additional GitHub contributors](https://github.com/verifereum/verifereum/graphs/contributors).
 
 ## Background
 
@@ -75,7 +75,7 @@ We will follow the same proof-engineering practices that have produced Verifereu
 
 # Timeline and Budget Allocation
 
-In deciding on the budget for this work, we are considering that hopefully Verifereum will be supported by additional grants concurrently. Hence, we have reduced the requested amount compared to the expected total engineering cost, which would be closer to $2,500 per EIP on average. If this programme is willing and able to fund the project at the higher level we would be very grateful for that support.
+In deciding on the budget for this work, we are considering that hopefully Verifereum will be supported by additional grants concurrently. Hence, we have reduced the requested amount compared to the expected total engineering cost, which would be closer to $2,500 per EIP on average. If this grant round is willing and able to fund the project at the higher level we would be very grateful for that support.
 
 We aim to deliver on average 2 EIPs per week at a cost of $1,000 each, to be used entirely to pay stipends for the engineering work. Although some EIPs will be more difficult than others, the budget is amortised over them all. There are 10 relevant EIPs.
 
