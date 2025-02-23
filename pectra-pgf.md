@@ -75,6 +75,8 @@ We will follow the same proof-engineering practices that have produced Verifereu
 
 # Timeline and Budget Allocation
 
-We aim to deliver on average 2 EIPs per week at a cost of $1000 each, to be used entirely to pay stipends for the engineering work. Although some EIPs will be more difficult than others, the budget is amortised over them all. There are 10 relevant EIPs.
+We aim to deliver on average 2 EIPs per week at a cost of $1,000 each, to be used entirely to pay stipends for the engineering work. Although some EIPs will be more difficult than others, the budget is amortised over them all. There are 10 relevant EIPs.
+
+In deciding on the budget for this work, we are considering that hopefully Verifereum will be supported by additional grants concurrently. Hence, we have reduced the requested amount compared to the expected total engineering cost, which would be closer to $2,500 per EIP on average. If this programme is willing and able to fund the project at the higher level it would be very helpful.
 
 Total Budget: $10,000, 5 weeks
