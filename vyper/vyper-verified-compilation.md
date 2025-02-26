@@ -1,0 +1,198 @@
+# Verified Compilation of Vyper
+
+## Project Abstract
+
+We will create a formally verified compiler for Vyper that is usable by real applications. This project addresses the critical need for trustworthy smart contract development on Ethereum by ensuring that compiled bytecode faithfully preserves the intended semantics of source programs. Not having to worry about compiler bugs will strengthen the case for source-level application verification.
+
+Formal verification in our context means that the EVM bytecode produced by the compiler exhibits behaviors only as allowed by the semantics of the source Vyper program. This means that developers and users only need to inspect or reason about the source program to trust that the deployed contract behaves as expected, eliminating the compiler as a point of vulnerability.
+
+All semantics and proofs will be developed in higher-order logic using the HOL4 interactive theorem prover, providing a small trusted computing base and mechanical verification of all claims. This approach not only ensures compiler correctness but also establishes a foundation for comprehensive correctness proofs of applications written in Vyper, which can then also be carried out in HOL4.
+
+## Objectives
+
+Our primary objective is to develop a verified subset of the Vyper compiler that produces usable bytecode with semantics preservation guarantees. Success for this project is defined by:
+
+1. Developing and formalising semantics for a substantial subset of Vyper in HOL4
+2. Creating a formal model of EVM execution that accurately captures all relevant behaviors
+3. Implementing an executable compiler within the logic that preserves source program semantics
+4. Producing a working compiler that developers can use for real applications
+5. Contributing to making Vyper's language specification more explicit and formal
+
+We will measure success through:
+- Completeness of the formalisation (percentage of Vyper language features covered)
+- Validation of the formalisation (conformance with existing test suites and examples)
+- Correctness guarantees (strength and interpretability of theorems proved about the compiler)
+- Usability (ability to compile real-world contracts, comparable output with the production unverified compiler)
+- Academic output (quality and number of publications)
+
+Objective 1 is partially covered by an already-awarded grant from the ESP (FY25-1892). Work towards objective 2 has already been done as part of the [Verifereum](https://verifereum.org) project.
+
+## Outcomes
+
+This project will benefit the Ethereum ecosystem in several critical ways:
+
+1. **Enhanced Security**: Smart contracts secure billions of dollars in value. Eliminating compiler bugs removes a significant attack vector in the development pipeline.
+2. **Increased Trust**: Developers and users will be able to trust that deployed contracts faithfully implement their source-level intentions.
+3. **Lower Verification Burden**: The verification burden is reduced to inspecting or proving properties about source code, rather than reasoning about low-level bytecode.
+4. **Formal Foundation**: Providing a formal semantics for Vyper contributes to the overall maturity of the Ethereum development ecosystem.
+5. **Bug Discovery**: The process of formalization often reveals bugs or inconsistencies in language definitions, benefiting the Vyper language itself.
+6. **Academic Advancement**: The project will advance formal methods research applied to smart-contract blockchains in general with the focus on Ethereum.
+
+## Grant Scope
+
+Our research will focus on:
+
+1. Formalising the semantics of Vyper and the EVM in HOL4
+2. Developing an executable verified compiler from Vyper to EVM bytecode
+3. Proving that this compiler preserves the semantics of source programs
+4. Creating a usable implementation that produces correct bytecode
+
+Expected outputs include:
+- Formal specifications of Vyper and EVM
+- A verified compiler implementation for a substantial subset of Vyper
+- Academic papers describing the semantics, verification approach, and results
+- Documentation to help make the Vyper language specification more explicit
+- A working compiler that can be used by developers
+
+We will prioritise the most interesting parts of the roadmap toward verified compilation, focusing on derisking the path to a full verified compiler while delivering something immediately usable at the conclusion of the grant period.
+
+## Related Work
+
+Our project builds upon and extends several research areas:
+
+1. **EVM Formalisations**: Previous and current work includes formalisations in K, Lean4, ACL2, Coq, and Isabelle/HOL; additionally there are executable specifications such as EELS and hevm. Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained. Our HOL4 formalization will be both comprehensive and maintained, and leverage the strengths of HOL4: deep expressivity and extensibility of the formalisation, and a small trustworthy kernel.
+
+2. **Verified Compilation**: Projects like CompCert and CakeML have demonstrated the feasibility of verified compilation for conventional languages. Our work extends these techniques to the domain-specific challenges of smart-contract languages.
+
+3. **Smart Contract Verification**: Numerous tools exist for verifying properties of smart contracts (e.g., using Dafny, Z3), but these typically operate either reasoning directly at the bytecode level or use simplified models of execution disconnected from the real bytecode semantics.
+
+4. **Vyper Semantics**: Limited formal work exists on Vyper's semantics. Our project will provide the first comprehensive formalisation of the language.
+
+The specific gap we are addressing is the lack of a verified compiler for a high-level Ethereum language that both preserves semantics and is usable in practice. While verification tools exist, they typically operate after compilation, when issues may already be present, or assume compiler correctness. Our approach eliminates compilation bugs as a source of vulnerabilities.
+
+## Project Team
+
+Our interdisciplinary team combines expertise in formal verification, compiler development, and Ethereum technology:
+
+1. [Name 1] - Principal Investigator (80 hours/month)
+   Role: Overall project leadership and formal verification expertise
+
+2. [Name 2] - Compiler Verification Lead (120 hours/month)
+   Role: Design and implementation of the verified compiler
+
+3. [Name 3] - Vyper Expert (60 hours/month)
+   Role: Liaison with Vyper development team and semantics design
+
+4. [Name 4] - EVM Semantics Lead (100 hours/month)
+   Role: Development and maintenance of formal EVM model
+
+5. [Name 5] - Research Assistant (160 hours/month)
+   Role: Proof development and implementation support
+
+## Background and Prior Work
+
+Our team brings together the expertise needed to successfully complete this challenging project:
+
+- **Compiler Verification Expertise**: Team members have contributed to the CakeML verified compiler and related projects, demonstrating the ability to verify complex compiler transformations in higher-order logic.
+
+- **Vyper Development Experience**: We include core members of the Vyper compiler development team who bring deep knowledge of the language, its implementation challenges, and evolution plans.
+
+- **Ethereum Expertise**: Our team includes active participants in the Ethereum ecosystem as contract developers, home-stakers, and Rocket Pool node-runners/validators, ensuring our work remains relevant to real-world needs.
+
+Relevant prior work includes:
+- [Add specific papers, repositories, or projects]
+- [Add links to team members' prior research]
+- [Note: Our team has already received a small grant for initial work on Vyper semantics]
+
+## Methodology
+
+Our approach follows a methodical progression through formal specification, implementation, verification, and validation:
+
+### High-level Roadmap/Milestones:
+
+1. **EVM Semantics** [Must] - Q1
+   - Formalize execution model in HOL4
+   - Cover all relevant opcodes and state transitions
+   - Ensure alignment with latest EVM specifications
+
+2. **Vyper Semantics** [Must] - Q1-Q2
+   - Formalize core subset of Vyper
+   - Collaborate with Vyper team on specification improvements
+   - Document memory/storage layout and execution model
+
+3. **Validation of Semantics** [Nice to have] - Q2
+   - Test against reference implementations
+   - Prove key properties about the semantics
+
+4. **IR Semantics** [Nice to have] - Q2-Q3
+   - Formalize Venom IR for compiler intermediate representation
+   - Specify IR transformations and optimizations
+
+5. **Compiler Implementation in Logic** [Must] - Q3
+   - Implement executable compiler in HOL4
+   - Start with unoptimized version for core language subset
+   - Extend to more features as verification progresses
+
+6. **Validation of Implementation** [Nice to have] - Q3-Q4
+   - Test against reference compiler output
+   - Develop equivalence checking for bytecode
+
+7. **Compiler Verification** [Must] - Q4
+   - Prove semantics preservation
+   - Establish end-to-end correctness guarantees
+
+### Timeline and Deliverables:
+
+**Milestone 1: EVM and Core Vyper Semantics**
+- Budget: $X (based on Y hours at $Z/hour)
+- Deliverables:
+  - HOL4 formalization of EVM execution model
+  - HOL4 formalization of core Vyper subset
+  - Documentation of formal semantics
+  - Technical report on semantic design choices
+
+**Milestone 2: Compiler Implementation and Initial Verification**
+- Budget: $X (based on Y hours at $Z/hour)
+- Deliverables:
+  - Executable compiler implementation in HOL4
+  - Initial correctness proofs for subset of transformations
+  - Test suite validating against reference compiler
+  - Report on implementation approach
+
+**Milestone 3: Complete Verification and Usable Compiler**
+- Budget: $X (based on Y hours at $Z/hour)
+- Deliverables:
+  - Complete semantics preservation proofs
+  - Usable compiler implementation
+  - Documentation for developers
+  - Academic paper(s) describing the verification
+  - Contributions to Vyper language specification
+
+## Requested Grant Amount and Budget
+
+We request a total grant of $XXX,XXX to support this work.
+
+### Budget Breakdown:
+
+**Principal Researcher Costs**: $XXX,XXX
+- PI: X months at $Y/month
+- Compiler Verification Lead: X months at $Y/month
+- Vyper Expert: X months at $Y/month
+
+**Other Staff Costs**: $XX,XXX
+- Research Assistants: X months at $Y/month
+- EVM Semantics Specialist: X months at $Y/month
+
+**Indirect Costs**: $XX,XXX
+- University/Institution overhead (X% of direct costs)
+
+**Hardware/Software Costs**: $X,XXX
+- Specialized computing resources for proof development
+- Software licenses
+
+**Scaling Options**:
+- At $XXX,XXX funding level: Core Vyper subset with basic verification
+- At $XXX,XXX funding level: Extended language coverage and optimizations
+- At $XXX,XXX funding level: Comprehensive verification with tooling for bytecode equivalence checking
+
+We are prepared to adjust the scope based on available funding while ensuring delivery of a useful verified compiler.
