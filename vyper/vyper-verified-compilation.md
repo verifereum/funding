@@ -110,34 +110,45 @@ Our approach follows a methodical progression through formal specification, impl
 
 ### High-level Roadmap/Milestones:
 
-1. **EVM Semantics** [Must] - Q1
+1. **EVM Semantics** [Must] - 3 person months (Done?)
    - Formalize execution model in HOL4
    - Cover all relevant opcodes and state transitions
    - Ensure alignment with latest EVM specifications
 
-2. **Vyper Semantics** [Must] - Q1-Q2
+2. **Vyper Semantics** [Must] - 3-6 person months (Done?)
    - Formalize core subset of Vyper
    - Collaborate with Vyper team on specification improvements
    - Document memory/storage layout and execution model
+   - Reify view of the abstract Vyper machine to EVM state
 
-3. **Validation of Semantics** [Nice to have] - Q2
+2b. **Vyper Semantics Add-Ons** [Nice to have] - ??
+   - Parser
+   - Type checking
+   - Semantic analysis
+   - Import resolution
+
+3a. **Validation of EVM Semantics** [Nice to have] - 6 person months
    - Test against reference implementations
    - Prove key properties about the semantics
 
-4. **IR Semantics** [Nice to have] - Q2-Q3
+3b. **Validation of Vyper Semantics** [Nice to have] - 6 person months
+   - Test against reference implementations
+   - Prove key properties about the semantics
+
+4. **IR Semantics** [Nice to have] - 6-9 person months
    - Formalize Venom IR for compiler intermediate representation
    - Specify IR transformations and optimizations
 
-5. **Compiler Implementation in Logic** [Must] - Q3
+5. **Compiler Implementation in Logic** [Must] - 1-2 person months
    - Implement executable compiler in HOL4
    - Start with unoptimized version for core language subset
    - Extend to more features as verification progresses
 
-6. **Validation of Implementation** [Nice to have] - Q3-Q4
+6. **Validation of Implementation** [Nice to have] - 9-12 person months
    - Test against reference compiler output
    - Develop equivalence checking for bytecode
 
-7. **Compiler Verification** [Must] - Q4
+7. **Compiler Verification** [Must] - 12 months
    - Prove semantics preservation
    - Establish end-to-end correctness guarantees
 
