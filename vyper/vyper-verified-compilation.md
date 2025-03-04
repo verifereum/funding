@@ -2,30 +2,30 @@
 
 ## Project Abstract
 
-We will create a formally verified compiler for Vyper that is usable by real applications. This project addresses the critical need for trustworthy smart contract development on Ethereum by ensuring that compiled bytecode faithfully preserves the intended semantics of source programs. Not having to worry about compiler bugs will strengthen the case for source-level application verification.
+We will create a formally verified compiler for [Vyper](https://vyperlang.org) that is usable by real applications. This project addresses the critical need for trustworthy smart contract development on Ethereum by ensuring that compiled bytecode faithfully preserves the intended semantics of source programs. Not having to worry about compiler bugs will strengthen the case for source-level application verification.
 
-Formal verification in our context means that the EVM bytecode produced by the compiler exhibits behaviors only as allowed by the semantics of the source Vyper program. This means that developers and users only need to inspect or reason about the source program to trust that the deployed contract behaves as expected, eliminating the compiler as a point of vulnerability.
+Formal verification in our context means that the EVM (Ethereum Virtual Machine) bytecode produced by the compiler exhibits behaviors only as allowed by the semantics of the source Vyper program. This means that developers and users only need to inspect or reason about the source program to trust that the deployed contract behaves as expected, eliminating the compiler as a point of vulnerability.
 
-All semantics and proofs will be developed in higher-order logic using the HOL4 interactive theorem prover, providing a small trusted computing base and mechanical verification of all claims. This approach not only ensures compiler correctness but also establishes a foundation for comprehensive correctness proofs of applications written in Vyper, which can then also be carried out in HOL4.
+All semantics and proofs will be developed in higher-order logic using [the HOL4 interactive theorem prover](https://hol-theorem-prover.org), providing a small trusted computing base and mechanical verification of all claims. This approach not only ensures compiler correctness but also establishes a foundation for comprehensive correctness proofs of applications written in Vyper, which can then also be carried out in HOL4.
 
 ## Objectives
 
 Our primary objective is to develop a verified subset of the Vyper compiler that produces usable bytecode with semantics preservation guarantees. Success for this project is defined by:
 
-1. Developing and formalising semantics for a substantial subset of Vyper in HOL4
+1. Developing and formalising semantics for Vyper (or a substantial subset thereof) in HOL4
 2. Creating a formal model of EVM execution that accurately captures all relevant behaviors
 3. Implementing an executable compiler within the logic that preserves source program semantics
 4. Producing a working compiler that developers can use for real applications
 5. Contributing to making Vyper's language specification more explicit and formal
 
 We will measure success through:
-- Completeness of the formalisation (percentage of Vyper language features covered)
+- Completeness of the formalisation (proportion of Vyper language features covered)
 - Validation of the formalisation (conformance with existing test suites and examples)
 - Correctness guarantees (strength and interpretability of theorems proved about the compiler)
 - Usability (ability to compile real-world contracts, comparable output with the production unverified compiler)
 - Academic output (quality and number of publications)
 
-Objective 1 is partially covered by an already-awarded grant from the ESP (FY25-1892). Work towards objective 2 has already been done as part of the [Verifereum](https://verifereum.org) project.
+Objective 1 is partially covered by an already-awarded grant from the ESP (Ecosystem Support Program) (ID: FY25-1892), and work is already underway. Substantial work towards objective 2 has been done already as part of the [Verifereum](https://verifereum.org) project.
 
 ## Outcomes
 
@@ -35,8 +35,19 @@ This project will benefit the Ethereum ecosystem in several critical ways:
 2. **Increased Trust**: Developers and users will be able to trust that deployed contracts faithfully implement their source-level intentions.
 3. **Lower Verification Burden**: The verification burden is reduced to inspecting or proving properties about source code, rather than reasoning about low-level bytecode.
 4. **Formal Foundation**: Providing a formal semantics for Vyper contributes to the overall maturity of the Ethereum development ecosystem.
-5. **Bug Discovery**: The process of formalization often reveals bugs or inconsistencies in language definitions, benefiting the Vyper language itself.
-6. **Academic Advancement**: The project will advance formal methods research applied to smart-contract blockchains in general with the focus on Ethereum.
+5. **Bug Discovery**: The process of formalisation often reveals bugs or inconsistencies in language definitions, benefiting the Vyper language itself.
+6. **Academic Advancement**: The project will advance formal methods research applied to smart-contract blockchains in general with a strong focus on Ethereum.
+
+To give more concreteness, here are some examples of the topics for papers we expect to write during the project:
+
+- Formal Semantics of Vyper
+- Semantics of the EVM in HOL (Verifereum) that is up to date, maintainable, and used
+- Verification of parts of the Vyper compiler, e.g. the Venom IR and optimisation passes on it
+- A Verified Compiler for Vyper (perhaps unoptimising, but complete and usable)
+- End-to-end verification of Vyper programs (i.e., including examples of verified source programs)
+- Verification of (some particular) Vyper compiler optimisations
+- Practical Verified Compilation for Vyper Applications (i.e. an optimising verified compiler, and an approach to proving bytecode equivalence with the production compiler)
+- How we keep the verified Vyper compiler up to date as the EVM, the Vyper language, and the compilation algorithms evolve
 
 ## Grant Scope
 
@@ -48,6 +59,7 @@ Our research will focus on:
 4. Creating a usable implementation that produces correct bytecode
 
 Expected outputs include:
+
 - Formal specifications of Vyper and EVM
 - A verified compiler implementation for a substantial subset of Vyper
 - Academic papers describing the semantics, verification approach, and results
@@ -72,22 +84,19 @@ The specific gap we are addressing is the lack of a verified compiler for a high
 
 ## Project Team
 
-Our interdisciplinary team combines expertise in formal verification, compiler development, and Ethereum technology:
+Our interdisciplinary team combines expertise in formal verification, compiler development, and Ethereum technology.
 
-1. [Name 1] - Principal Investigator (80 hours/month)
-   Role: Overall project leadership and formal verification expertise
+We have an open project structure, developing all code and proofs in the open, welcoming all contributions, and mentoring new community members. As such, not all contributors will be listed here in advance. However, we highlight the core contributors who will be leading the project and ensuring its completion:
 
-2. [Name 2] - Compiler Verification Lead (120 hours/month)
-   Role: Design and implementation of the verified compiler
+1. Ramana Kumar, PhD in formal verification, user and developer of Ethereum applications, lead developer of Verifereum
 
-3. [Name 3] - Vyper Expert (60 hours/month)
-   Role: Liaison with Vyper development team and semantics design
+2. Magnus Myreen, PhD in formal verification, professor at Chalmers University, lead developer of the CakeML verified compiler
 
-4. [Name 4] - EVM Semantics Lead (100 hours/month)
-   Role: Development and maintenance of formal EVM model
+3. Michael Norrish, PhD in formal verification, professor at the Australian National University, lead developer of the HOL4 theorem prover
 
-5. [Name 5] - Research Assistant (160 hours/month)
-   Role: Proof development and implementation support
+4. Charles Cooper, lead developer of the Vyper language and compiler
+
+5. Cyberthirst and/or Benny should also be listed?
 
 ## Background and Prior Work
 
