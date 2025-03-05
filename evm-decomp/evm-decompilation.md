@@ -43,6 +43,9 @@ How to convince the reader that we can do this?
 - We have HOL4 expertise including proof automation, including the above
 - EVM is a nice setting for verification: clear semantics, small programs, determinism, premium on correctness, etc.
 
+We should include an example of some contract bytecode and what we expect the
+decompiled version of it would look like in logic.
+
 Who will be involved?
 - Ramana
 - Magnus
