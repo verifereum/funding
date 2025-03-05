@@ -70,6 +70,8 @@ We will prioritise the most interesting parts of the roadmap toward verified com
 
 ## Related Work
 
+TODO: put links (doi citations if needed) to the relevant references
+
 Our project builds upon and extends several research areas:
 
 1. **EVM Formalisations**: Previous and current work includes formalisations in K, Lean4, ACL2, Coq, and Isabelle/HOL; additionally there are executable specifications such as EELS and hevm. Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained. Our HOL4 formalization will be both comprehensive and maintained, and leverage the strengths of HOL4: deep expressivity and extensibility of the formalisation, and a small trustworthy kernel.
@@ -96,9 +98,13 @@ We have an open project structure, developing all code and proofs in the open, w
 
 4. Charles Cooper, lead developer of the Vyper language and compiler
 
-5. Cyberthirst and/or Benny should also be listed?
+5. Cyberthirst and/or Benny should also be listed? TODO: ask them
+
+TODO: read over and approval from anyone listed
 
 ## Background and Prior Work
+
+TODO: more specifically mention here who has been involved, and how, in what projects in the past
 
 Our team brings together the expertise needed to successfully complete this challenging project:
 
@@ -108,14 +114,9 @@ Our team brings together the expertise needed to successfully complete this chal
 
 - **Ethereum Expertise**: Our team includes active participants in the Ethereum ecosystem as contract developers, home-stakers, and Rocket Pool node-runners/validators, ensuring our work remains relevant to real-world needs.
 
-Relevant prior work includes:
-- [Add specific papers, repositories, or projects]
-- [Add links to team members' prior research]
-- [Note: Our team has already received a small grant for initial work on Vyper semantics]
-
 ## Methodology
 
-Our approach follows a methodical progression through formal specification, implementation, verification, and validation:
+Here we give a roadmap for the overall project of delivering a verified optimising compiler for Vyper that is usable in practice. For this grant application we imagine that only a portion of the roadmap will be funded, and we request your guidance in selecting the most valuable parts to fund first.
 
 ### High-level Roadmap/Milestones:
 
@@ -190,29 +191,8 @@ Our approach follows a methodical progression through formal specification, impl
 
 ## Requested Grant Amount and Budget
 
-We request a total grant of $XXX,XXX to support this work.
+TODO: big project and small project versions with total costs
 
 ### Budget Breakdown:
 
-**Principal Researcher Costs**: $XXX,XXX
-- PI: X months at $Y/month
-- Compiler Verification Lead: X months at $Y/month
-- Vyper Expert: X months at $Y/month
-
-**Other Staff Costs**: $XX,XXX
-- Research Assistants: X months at $Y/month
-- EVM Semantics Specialist: X months at $Y/month
-
-**Indirect Costs**: $XX,XXX
-- University/Institution overhead (X% of direct costs)
-
-**Hardware/Software Costs**: $X,XXX
-- Specialized computing resources for proof development
-- Software licenses
-
-**Scaling Options**:
-- At $XXX,XXX funding level: Core Vyper subset with basic verification
-- At $XXX,XXX funding level: Extended language coverage and optimizations
-- At $XXX,XXX funding level: Comprehensive verification with tooling for bytecode equivalence checking
-
-We are prepared to adjust the scope based on available funding while ensuring delivery of a useful verified compiler.
+TODO: list the kinds of things the budget will be spent on
