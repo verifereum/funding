@@ -136,11 +136,11 @@ Our roadmap to success is roughly composed of the following milestones. Time est
    - Import resolution
    - Semantic analysis
 
-3a. **Validation of EVM Semantics** [Nice to have] - 6 person months
+3a. **Validation of EVM Semantics** [Nice to have] - 2-3 person months
    - Test against reference implementations
    - Prove key properties about the semantics
 
-3b. **Validation of Vyper Semantics** [Nice to have] - 6 person months
+3b. **Validation of Vyper Semantics** [Nice to have] - 2-3 person months
    - Test against reference implementations
    - Prove key properties about the semantics
 
@@ -148,15 +148,15 @@ Our roadmap to success is roughly composed of the following milestones. Time est
    - Formalize Venom IR for compiler intermediate representation
    - Specify IR transformations and optimizations
 
-5. **Compiler Implementation in Logic** [Must] - 1-2 person months
+5. **Compiler Implementation in Logic** [Must] - 3-4 person months
    - Implement executable compiler in HOL4
    - Start with unoptimized version for core language subset
    - Extend to more features as verification progresses
 
-6. **Validation of Implementation** [Nice to have] - 1-2 person months
+6. **Validation of Implementation** [Nice to have] - 1 person months
    - Test against reference compiler output
 
-7. **Compiler Verification** [Must] - 12 person months
+7. **Compiler Verification** [Must] - 9-12 person months
    - Develop equivalence checking for bytecode
    - Prove semantics preservation
    - Establish end-to-end correctness guarantees
@@ -164,23 +164,26 @@ Our roadmap to success is roughly composed of the following milestones. Time est
 ### Timeline and Deliverables:
 
 **Milestone 1: EVM and Core Vyper Semantics**
-- Budget: $X (based on Y hours at $Z/hour)
+<!-- 10-22 months -->
+- Budget: $352,000-$774,400 (based on 10-22 person months at $200/hour with 0 overhead)
 - Deliverables:
   - HOL4 formalization of EVM execution model
   - HOL4 formalization of core Vyper subset
   - Documentation of formal semantics
   - Technical report on semantic design choices
 
+  <!-- 3-5 months -->
 **Milestone 2: Compiler Implementation and Initial Verification**
-- Budget: $X (based on Y hours at $Z/hour)
+- Budget: $105,600-$176,000 (based on 3-5 person months at $200/hour with 0 overhead)
 - Deliverables:
   - Executable compiler implementation in HOL4
   - Initial correctness proofs for subset of transformations
   - Test suite validating against reference compiler
   - Report on implementation approach
 
+  <!-- 9-18 months -->
 **Milestone 3: Complete Verification and Usable Compiler**
-- Budget: $X (based on Y hours at $Z/hour)
+- Budget: $316,800-$633,600 (based on 9-18 person months at $200/hour with 0 overhead)
 - Deliverables:
   - Complete semantics preservation proofs
   - Usable compiler implementation
