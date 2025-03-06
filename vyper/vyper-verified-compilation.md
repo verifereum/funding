@@ -36,16 +36,14 @@ This project will benefit the Ethereum ecosystem in several critical ways:
 3. **Lower Verification Burden**: The verification burden is reduced to inspecting or proving properties about source code, rather than reasoning about low-level bytecode.
 4. **Formal Foundation**: Providing a formal semantics for Vyper contributes to the overall maturity of the Ethereum development ecosystem.
 5. **Bug Discovery**: The process of formalisation often reveals bugs or inconsistencies in language definitions, benefiting the Vyper language itself.
-6. **Academic Advancement**: The project will advance formal methods research applied to smart-contract blockchains in general with a strong focus on Ethereum.
-
-To give more concreteness, here are some examples of the topics for papers we expect to write during the project:
+6. **Academic Advancement**: The project will advance formal methods research applied to smart-contract blockchains in general with a strong focus on Ethereum. To give more concreteness, here are some examples of the topics for papers we expect to write during the project:
 
 - Formal Semantics of Vyper
 - Semantics of the EVM in HOL (Verifereum) that is up to date, maintainable, and used
 - Verification of parts of the Vyper compiler, e.g. the Venom IR and optimisation passes on it
 - A Verified Compiler for Vyper (perhaps unoptimising, but complete and usable)
 - End-to-end verification of Vyper programs (i.e., including examples of verified source programs)
-- Verification of (some particular) Vyper compiler optimisations
+- Verification of Vyper compiler optimisations
 - Practical Verified Compilation for Vyper Applications (i.e. an optimising verified compiler, and an approach to proving bytecode equivalence with the production compiler)
 - How we keep the verified Vyper compiler up to date as the EVM, the Vyper language, and the compilation algorithms evolve
 
@@ -90,7 +88,7 @@ Our interdisciplinary team combines expertise in formal verification, compiler d
 
 We have an open project structure, developing all code and proofs in the open, welcoming all contributions, and mentoring new community members. As such, not all contributors will be listed here in advance. However, we highlight the core contributors who will be leading the project and ensuring its completion:
 
-1. Ramana Kumar, PhD in formal verification, user and developer of Ethereum applications, lead developer of Verifereum
+1. Ramana Kumar, PhD in formal verification, user and developer of Ethereum applications, lead developer of Verifereum.
 
 2. Magnus Myreen, PhD in formal verification, professor at Chalmers University, lead developer of the CakeML verified compiler
 
@@ -98,17 +96,13 @@ We have an open project structure, developing all code and proofs in the open, w
 
 4. Charles Cooper, lead developer of the Vyper language and compiler
 
-5. Cyberthirst and/or Benny should also be listed? TODO: ask them
-
-TODO: read over and approval from anyone listed
+5. Cyberthirst, lead security engineer of the Vyper compiler
 
 ## Background and Prior Work
 
 TODO: more specifically mention here who has been involved, and how, in what projects in the past
 
-Our team brings together the expertise needed to successfully complete this challenging project:
-
-- **Compiler Verification Expertise**: Team members have contributed to the CakeML verified compiler and related projects, demonstrating the ability to verify complex compiler transformations in higher-order logic.
+- **Compiler Verification Expertise**: Team members are core developers of the CakeML verified compiler and related projects, demonstrating the ability to verify complex compiler transformations in higher-order logic. The CakeML verified compiler is the only production-grade verified compiler in the world, aside from CompCert.
 
 - **Vyper Development Experience**: We include core members of the Vyper compiler development team who bring deep knowledge of the language, its implementation challenges, and evolution plans.
 
@@ -120,22 +114,27 @@ Here we give a roadmap for the overall project of delivering a verified optimisi
 
 ### High-level Roadmap/Milestones:
 
-1. **EVM Semantics** [Must] - 3 person months (Done?)
+Our roadmap to success is roughly composed of the following milestones. Time estimates (in person months) are provided to provide an indicative sense of the relative difficulty of implementing the various milestones.
+
+1. **EVM Semantics** [Must] - 6 person months
    - Formalize execution model in HOL4
    - Cover all relevant opcodes and state transitions
    - Ensure alignment with latest EVM specifications
+   - Mostly complete already, ~1 person month remaining
 
-2. **Vyper Semantics** [Must] - 3-6 person months (Done?)
+2. **Vyper Semantics** [Must] - 4 person months
    - Formalize core subset of Vyper
    - Collaborate with Vyper team on specification improvements
    - Document memory/storage layout and execution model
    - Reify view of the abstract Vyper machine to EVM state
+   - Partially complete, ~2 person months remaining
 
-2b. **Vyper Semantics Add-Ons** [Nice to have] - ??
+2b. **Vyper Semantics Add-Ons** [Nice to have] - 3-6 person months
    - Parser
    - Type checking
-   - Semantic analysis
+   - Type soundness proof
    - Import resolution
+   - Semantic analysis
 
 3a. **Validation of EVM Semantics** [Nice to have] - 6 person months
    - Test against reference implementations
@@ -154,11 +153,11 @@ Here we give a roadmap for the overall project of delivering a verified optimisi
    - Start with unoptimized version for core language subset
    - Extend to more features as verification progresses
 
-6. **Validation of Implementation** [Nice to have] - 9-12 person months
+6. **Validation of Implementation** [Nice to have] - 1-2 person months
    - Test against reference compiler output
-   - Develop equivalence checking for bytecode
 
-7. **Compiler Verification** [Must] - 12 months
+7. **Compiler Verification** [Must] - 12 person months
+   - Develop equivalence checking for bytecode
    - Prove semantics preservation
    - Establish end-to-end correctness guarantees
 
