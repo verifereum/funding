@@ -96,7 +96,7 @@ We have an open project structure, developing all code and proofs in the open, w
 
 4. Charles Cooper, lead developer of the Vyper language and compiler
 
-5. Cyberthirst, lead security engineer of the Vyper compiler
+5. Cyberthirst, MsC, lead security engineer of the Vyper compiler
 
 ## Background and Prior Work
 
