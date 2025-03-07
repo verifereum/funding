@@ -10,22 +10,24 @@ All semantics and proofs will be developed in higher-order logic using [the HOL4
 
 ## Objectives
 
-Our primary objective is to develop a verified subset of the Vyper compiler that produces usable bytecode with semantics preservation guarantees. Success for this project is defined by:
+Our immediate goal is to show that it is practically possible to build a verified Vyper compiler that produces usable bytecode with semantics preservation guarantees.
+Using the funding provided, we will run _a pilot project_ that builds a verified compiler for _a subset of_ the Vyper language.
+This pilot project will build the compiler in such a way that it is clear how the work could be extended to more or even all of the Vyper language, and for the verified compiler to eventually support all optimisations performed by the current Vyper compiler.
+
+Success for this project is defined by:
+
+1. Constructing a verified compiler for a subset of Vyper source language and demonstrating that the verified compiler is practially usable.
+2. Publishing an academic paper describing the work and also bringing attention to it (with the aim to recruit people to join the effort for the continuation of this work after the pilot project has finished).
+
+Incidental objective includes:
 
 1. Developing and formalising semantics for Vyper (or a substantial subset thereof) in HOL4
 2. Creating a formal model of EVM execution that accurately captures all relevant behaviors
 3. Implementing an executable compiler within the logic that preserves source program semantics
-4. Producing a working compiler that developers can use for real applications
-5. Contributing to making Vyper's language specification more explicit and formal
 
-We will measure success through:
-- Completeness of the formalisation (proportion of Vyper language features covered)
-- Validation of the formalisation (conformance with existing test suites and examples)
-- Correctness guarantees (strength and interpretability of theorems proved about the compiler)
-- Usability (ability to compile real-world contracts, comparable output with the production unverified compiler)
-- Academic output (quality and number of publications)
+Incidental objective 1 is partially covered by an already-awarded grant from the ESP (Ecosystem Support Program) (ID: FY25-1892), and work is already underway. Substantial work towards incidental objective 2 has been done already as part of the [Verifereum](https://verifereum.org) project.
 
-Objective 1 is partially covered by an already-awarded grant from the ESP (Ecosystem Support Program) (ID: FY25-1892), and work is already underway. Substantial work towards objective 2 has been done already as part of the [Verifereum](https://verifereum.org) project.
+The aim of this pilot project is to start a longer project to build a verified compiler that developers can use for real applications, and we also intend to contribute to making Vyper's language specification more explicit and precise through this work.
 
 ## Outcomes
 
