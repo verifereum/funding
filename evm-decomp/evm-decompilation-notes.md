@@ -86,29 +86,46 @@ Disassembling these bytes, we can see the opcode at each code location:
 00000074: RETURN
 ```
 
-In Huff code (an assembly-like language for EVM bytecode), this contract looks like this, with comments:
+In Huff code (an assembly-like language for EVM bytecode), this contract looks like this, with comments indicating the stack and memory state at each point:
 ``` huff
-    #define constant OWNER = 0x1234567890123456789012345678901234567890
-    #define constant TOKEN = 0x9876543210987654321098765432109876543210
-
-    push0 // put a 0 on the stack for the eventual revert/return
-    __FUNC_SIG("balanceOf(address)") push0 mstore address 0x20 mstore
-    0x20 0x40 // store self's token balance at 0x40
-    0x24 0x1c // function signature + one argument
-    push0 [TOKEN] gas call
-    iszero // assume balanceOf succeeded, convert to 0 for revert/return
-    __FUNC_SIG("transfer(address,uint256)") push0 mstore [OWNER] 0x20 mstore
-    0x20 push0 // store result of transfer at 0x00
-    0x44 0x1c // function signature + two arguments
-    push0 [TOKEN] gas call
-    push0 mload and // require no revert & return of true
-    if jumpi revert if: return
+#define constant OWNER = 0x1234567890123456789012345678901234567890
+#define constant TOKEN = 0x9876543210987654321098765432109876543210
+#define macro MAIN () = {
+  push0                            //          [0x00] {}
+  __FUNC_SIG("balanceOf(address)") //   ["...", 0x00] {}
+  push0 mstore                     //          [0x00] {0x00: "balanceOf(...)"}
+  address 0x20 mstore              //          [0x00]
+                    // {0x00: "balanceOf(...)", 0x20: address}
+  0x20 0x40         //             [0x40, 0x20, 0x00]
+                    //   {0x00: "balanceOf(...)", 0x20: address}
+  0x24 0x1c         // [0x1c, 0x24, 0x40, 0x20, 0x00]
+                    //   {0x00: "balanceOf(...)", 0x20: address}
+  push0 [TOKEN] gas // [gas, token, 0x00, 0x1c, 0x24, 0x40, 0x20, 0x00]
+                    //   {0x00: "balanceOf(...)", 0x20: address}
+  call              //            [result, 0x00] {0x00: "balanceOf(...)", 0x20: address, 0x40: balance}
+  iszero // (assume result is 0x01) [0x00, 0x00] {0x00: "balanceOf(...)", 0x20: address, 0x40: balance}
+  __FUNC_SIG("transfer(address,uint256)")
+  push0 mstore         //                   [0x00, 0x00] {0x00: "transfer(...)", 0x20: address, 0x40: balance}
+  [OWNER] 0x20 mstore  //                   [0x00, 0x00] {0x00: "transfer(...)", 0x20: owner, 0x40: balance, 0x60: owner}
+  0x20 push0           //       [0x00, 0x20, 0x00, 0x00] {0x00: "transfer(...)", 0x20: owner, 0x40: balance, 0x60: owner}
+  0x44 0x1c      // [0x1c, 0x44, 0x00, 0x20, 0x00, 0x00] {0x00: "transfer(...)", 0x20: owner, 0x40: balance, 0x60: owner}
+  push0 [TOKEN] gas // [gas, token, 0x00, 0x1c, 0x44, 0x00, 0x20, 0x00, 0x00]
+                    // {0x00: "transfer(...)", 0x20: owner, 0x40: balance, 0x60: owner}
+  call         //            [result, 0x00, 0x00] {0x00: returned, 0x20: owner, 0x40: balance, 0x60: owner}
+  push0 mload  //  [returned, result, 0x00, 0x00] {...}
+  and          // [returned & result, 0x00, 0x00] {...}
+  if jumpi revert if: return
+}
 ```
 
 TODO: show a separation logic triple for a small part of this code (e.g., the first four lines)
+
 TODO: show a separation logic triple for the first call
+
 TODO: show function representing the code in each of the above triples
+
 TODO: show a separation logic triple for the whole contract
+
 TODO: show function representing the whole contract
 
 ## How to convince the reader that we can do this?
