@@ -38,35 +38,20 @@ This project will benefit the Ethereum ecosystem in several critical ways:
 3. **Lower Verification Burden**: The verification burden is reduced to inspecting or proving properties about source code, rather than reasoning about low-level bytecode.
 4. **Formal Foundation**: Providing a formal semantics for Vyper contributes to the overall maturity of the Ethereum development ecosystem.
 5. **Bug Discovery**: The process of formalisation often reveals bugs or inconsistencies in language definitions, benefiting the Vyper language itself.
-6. **Academic Advancement**: The project will advance formal methods research applied to smart-contract blockchains in general with a strong focus on Ethereum. To be more concrete, here are some examples of the topics for papers we expect to write during the project:
-
-- Formal Semantics of Vyper
-- Semantics of the EVM in HOL (Verifereum) that is up to date, maintainable, and used
-- Verification of parts of the Vyper compiler, e.g. the Venom IR and optimisation passes on it
-- A Verified Compiler for Vyper (perhaps unoptimising, but complete and usable)
-- End-to-end verification of Vyper programs (i.e., including examples of verified source programs)
-- Verification of Vyper compiler optimisations
-- Practical Verified Compilation for Vyper Applications (i.e. an optimising verified compiler, and an approach to proving bytecode equivalence with the production compiler)
-- How we keep the verified Vyper compiler up to date as the EVM, the Vyper language, and the compilation algorithms evolve
+6. **Academic Advancement**: The project will advance formal methods research applied to smart-contract blockchains in general with a strong focus on Ethereum. We are planning to publish a paper detailing our achievements within the scope of this grant which will serve as a stepping stone for further publications. This will result in additional attention and interest for Ethereum and blockchains within the academic community.
 
 ## Grant Scope
 
 Our research will focus on:
 
-1. Formalising the semantics of Vyper and the EVM in HOL4
+1. Formalising the semantics of a subset Vyper and the EVM in HOL4
 2. Developing an executable verified compiler from Vyper to EVM bytecode
-3. Proving that this compiler preserves the semantics of source programs
-4. Creating a usable implementation that produces correct bytecode
 
 Expected outputs include:
 
-- Formal specifications of Vyper and EVM
-- A verified compiler implementation for a substantial subset of Vyper
-- Academic papers describing the semantics, verification approach, and results
-- Documentation to help make the Vyper language specification more explicit
 - A working compiler that can be used by developers
+- An academic paper describing the work achieved within the scope of the grant
 
-We will prioritise the most interesting parts of the roadmap toward verified compilation, focusing on derisking the path to a full verified compiler while delivering something immediately usable at the conclusion of the grant period.
 
 ## Related Work
 
@@ -74,11 +59,11 @@ TODO: put links (doi citations if needed) to the relevant references
 
 Our project builds upon and extends several research areas:
 
-1. **EVM Formalisations**: Previous and current work includes formalisations in K, Lean4, ACL2, Coq, and Isabelle/HOL; additionally there are executable specifications such as EELS and hevm. Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained. Our HOL4 formalization will be both comprehensive and maintained, and leverage the strengths of HOL4: deep expressivity and extensibility of the formalisation, and a small trustworthy kernel.
+1. **EVM Formalisations**: Previous and current work includes formalisations in [K](https://doi.org/10.1109/CSF.2018.00022), [Lean4](https://github.com/NethermindEth/EVMYulLean), [Dafny](), [ACL2](https://www.kestrel.edu/research/ethereum/), [Coq](https://doi.org/10.48550/arXiv.1810.04828), and [Isabelle/HOL](https://doi.org/10.1145/316708); additionally there are executable specifications such as EELS and hevm. Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained. Our HOL4 formalization will be both comprehensive and maintained, and leverage the strengths of HOL4. Unlike K or Dafny which are based on first-order logic, HOL4 is based on higher-order logic whose semantics are [much more expressive](https://philpapers.org/rec/FARTSV). This allows for more complex and comprehensive proofs, beyond simple assertions about a contract's expected behavior. HOL4 has been [formally proven sound](https://www.cl.cam.ac.uk/~jrh13/papers/holhol.html) and has a very small and well reviewed kernel. 
 
-2. **Verified Compilation**: Projects like CompCert and CakeML have demonstrated the feasibility of verified compilation for conventional languages. Our work extends these techniques to the domain-specific challenges of smart-contract languages.
+2. **Verified Compilation**: Projects like [CompCert](https://doi.org/10.1145/1538788.1538814) and [CakeML](https://doi.org/10.1145/2578855.2535841) have demonstrated the feasibility of verified compilation for conventional languages. Our work extends these techniques to the domain-specific challenges of smart-contract languages.
 
-3. **Smart Contract Verification**: Numerous tools exist for verifying properties of smart contracts (e.g., using Dafny, Z3), but these typically operate by either reasoning directly at the bytecode level or use simplified models of execution disconnected from the real bytecode semantics.
+3. **Smart Contract Verification**: Numerous tools exist for verifying properties of smart contracts (e.g., using [Dafny](https://github.com/Consensys/evm-dafny), Z3), but these typically either reason directly at the bytecode level or use simplified models of execution disconnected from the real bytecode semantics.
 
 4. **Vyper Semantics**: Limited formal work exists on Vyper's semantics. Our project will provide the first comprehensive formalisation of the language.
 
