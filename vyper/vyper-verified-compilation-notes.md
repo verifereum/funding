@@ -214,3 +214,93 @@ Please provide an requested amount and outline of how the grant will be used. A 
     Software Costs
     Data Collection Costs
     Indirect Costs
+
+
+# Full project costing and milestones
+
+### High-level Roadmap/Milestones:
+
+Our roadmap to success is roughly composed of the following milestones. Time estimates (in person months) are provided to provide an indicative sense of the relative difficulty of implementing the various milestones.
+
+1. **EVM Semantics** [Must] - 6 person months
+   - Formalize execution model in HOL4
+   - Cover all relevant opcodes and state transitions
+   - Ensure alignment with latest EVM specifications
+   - Mostly complete already, ~1 person month remaining
+
+2. **Vyper Semantics** [Must] - 4 person months
+   - Formalize core subset of Vyper
+   - Collaborate with Vyper team on specification improvements
+   - Document memory/storage layout and execution model
+   - Reify view of the abstract Vyper machine to EVM state
+   - Partially complete, ~2 person months remaining
+
+2b. **Vyper Semantics Add-Ons** [Nice to have] - 3-6 person months
+   - Parser
+   - Type checking
+   - Type soundness proof
+   - Import resolution
+   - Semantic analysis
+
+3a. **Validation of EVM Semantics** [Nice to have] - 2-3 person months
+   - Test against reference implementations
+   - Prove key properties about the semantics
+
+3b. **Validation of Vyper Semantics** [Nice to have] - 2-3 person months
+   - Test against reference implementations
+   - Prove key properties about the semantics
+
+4. **IR Semantics** [Nice to have] - 6-9 person months
+   - Formalize Venom IR for compiler intermediate representation
+   - Specify IR transformations and optimizations
+
+5. **Compiler Implementation in Logic** [Must] - 3-4 person months
+   - Implement executable compiler in HOL4
+   - Start with unoptimized version for core language subset
+   - Extend to more features as verification progresses
+
+6. **Validation of Implementation** [Nice to have] - 1 person months
+   - Test against reference compiler output
+
+7. **Compiler Verification** [Must] - 9-12 person months
+   - Develop equivalence checking for bytecode
+   - Prove semantics preservation
+   - Establish end-to-end correctness guarantees
+
+### Timeline and Deliverables:
+
+**Milestone 1: EVM and Core Vyper Semantics**
+<!-- 10-22 months -->
+- Budget: $352,000-$774,400 (based on 10-22 person months at $200/hour with 0 overhead)
+- Deliverables:
+  - HOL4 formalization of EVM execution model
+  - HOL4 formalization of core Vyper subset
+  - Documentation of formal semantics
+  - Technical report on semantic design choices
+
+  <!-- 3-5 months -->
+**Milestone 2: Compiler Implementation and Initial Verification**
+- Budget: $105,600-$176,000 (based on 3-5 person months at $200/hour with 0 overhead)
+- Deliverables:
+  - Executable compiler implementation in HOL4
+  - Initial correctness proofs for subset of transformations
+  - Test suite validating against reference compiler
+  - Report on implementation approach
+
+  <!-- 9-18 months -->
+**Milestone 3: Complete Verification and Usable Compiler**
+- Budget: $316,800-$633,600 (based on 9-18 person months at $200/hour with 0 overhead)
+- Deliverables:
+  - Complete semantics preservation proofs
+  - Usable compiler implementation
+  - Documentation for developers
+  - Academic paper(s) describing the verification
+  - Contributions to Vyper language specification
+
+## Requested Grant Amount and Budget
+
+TODO: big project and small project versions with total costs
+
+### Budget Breakdown:
+
+TODO: list the kinds of things the budget will be spent on
