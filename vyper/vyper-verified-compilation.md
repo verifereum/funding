@@ -16,10 +16,10 @@ This pilot project will build the compiler in such a way that it is clear how th
 
 Success for this project is defined by:
 
-1. Constructing a verified compiler for a subset of the Vyper source language and demonstrating that the verified compiler is practially usable.
-2. Publishing an academic paper describing the work and also bringing attention to it (with the aim to recruit people to join the effort for the continuation of this work after the pilot project has finished).
+1. Constructing a verified compiler for a subset of the Vyper source language and demonstrating that the verified compiler is practically usable.
+2. Publishing an academic paper describing the work and bringing attention to it (with the aim to recruit people to join the effort for the continuation of this work after the pilot project has finished).
 
-Incidental objective includes:
+Incidental objectives include:
 
 1. Developing and formalising semantics for Vyper (or a substantial subset thereof) in HOL4
 2. Creating a formal model of EVM execution that accurately captures all relevant behaviors
@@ -81,7 +81,7 @@ We have an open project structure, developing all code and proofs in the open, w
 
 4. Charles Cooper, lead developer of the [Vyper language and compiler](https://vyperlang.org).
 
-5. Cyberthirst, MsC, lead security engineer of the Vyper compiler
+5. Cyberthirst, MSc, lead security engineer of the Vyper compiler
 
 ## Background and Prior Work
 
