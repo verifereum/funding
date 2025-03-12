@@ -229,7 +229,7 @@ Our roadmap to success is roughly composed of the following milestones. Time est
    - Mostly complete already, ~1 person month remaining
 
 2. **Vyper Semantics** [Must] - 4 person months
-   - Formalize core subset of Vyper
+   - Formalize core subset of Vyper, including in particular: ...**TODO**...
    - Collaborate with Vyper team on specification improvements
    - Document memory/storage layout and execution model
    - Reify view of the abstract Vyper machine to EVM state
@@ -263,7 +263,7 @@ Our roadmap to success is roughly composed of the following milestones. Time est
    - Test against reference compiler output
 
 7. **Compiler Verification** [Must] - 9-12 person months
-   - Develop equivalence checking for bytecode
+   - Develop equivalence checking for bytecode (**TODO** why?)
    - Prove semantics preservation
    - Establish end-to-end correctness guarantees
 

@@ -4,9 +4,9 @@
 
 We will create a formally verified compiler for [Vyper](https://vyperlang.org) that is usable by real applications. This project addresses the critical need for trustworthy smart contract development on Ethereum by ensuring that compiled bytecode faithfully preserves the intended semantics of source programs. Not having to worry about compiler bugs will strengthen the case for source-level application verification.
 
-Formal verification in our context means that the EVM (Ethereum Virtual Machine) bytecode produced by the compiler exhibits behaviors only as allowed by the semantics of the source Vyper program. This means that developers and users only need to inspect or reason about the source program to trust that the deployed contract behaves as expected, eliminating the compiler as a point of vulnerability.
+Formal verification in our context means that the EVM (Ethereum Virtual Machine) bytecode produced by the compiler exhibits behaviors only as allowed by the semantics of the source Vyper program. This means that developers and users need only inspect and/or reason about the source program to trust that the deployed contract behaves as expected, eliminating the compiler as a point of vulnerability.
 
-All semantics and proofs will be developed in higher-order logic using [the HOL4 interactive theorem prover](https://hol-theorem-prover.org), providing a small trusted computing base and mechanical verification of all claims. This approach not only ensures compiler correctness but also establishes a foundation for comprehensive correctness proofs of applications written in Vyper, which can then also be carried out in HOL4.
+All semantics and proofs will be developed in higher-order logic using [the HOL4 interactive theorem prover](https://hol-theorem-prover.org), providing a small trusted computing base and mechanical verification of all claims. This approach not only ensures compiler correctness, but also establishes a foundation for comprehensive correctness proofs of applications written in Vyper, which can then also be carried out in HOL4.
 
 ## Objectives
 
@@ -61,7 +61,7 @@ Our project builds upon and extends several research areas:
 
 2. **Verified Compilation**: Projects like [CompCert](https://doi.org/10.1145/1538788.1538814) and [CakeML](https://doi.org/10.1145/2578855.2535841) have demonstrated the feasibility of verified compilation for conventional languages. Our work extends these techniques to the domain-specific challenges of smart-contract languages.
 
-3. **Smart Contract Verification**: Numerous tools exist for verifying properties of smart contracts (e.g., using [Dafny](https://github.com/Consensys/evm-dafny) or [Z3](https://www.zellic.io/blog/formal-verification-weth/)), but these typically operate either reasoning directly at the bytecode level or use simplified models of execution disconnected from the real bytecode semantics.
+3. **Smart Contract Verification**: Numerous tools exist for verifying properties of smart contracts (e.g., using [Dafny](https://github.com/Consensys/evm-dafny) or [Z3](https://www.zellic.io/blog/formal-verification-weth/)), but these typically operate by either reasoning directly at the bytecode level or use simplified models of execution disconnected from the real bytecode semantics.
 
 4. **Vyper Semantics**: Limited formal work exists on Vyper's semantics. Our project will provide the first comprehensive formalisation of the language.
 
