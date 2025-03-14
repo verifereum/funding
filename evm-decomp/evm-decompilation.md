@@ -42,11 +42,13 @@ What is the specific gap your research is addressing within this context? -->
 [The Verifereum project](https://verifereum.org), which we are extending, has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's [research on decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) into logic has been successfully applied to various architectures, including x86, ARM, and MIPS, demonstrating its versatility and effectiveness.
 
 The gaps we are filling:
+
 - More expressive logic than many other approaches to verification of EVM programs, which means we can verify deeper correctness properties
 - Scalable expressivity: we can automate our proofs but, in cases where automation fails, there is always the option to do fully interactive proof for the hard parts
 - Trustworthiness of the underlying theorem prover HOL4, with its conservative design and small well-reviewed kernel
 
 Related work includes:
+
 - **TODO**
 - Runtime Verification's KEVM formalisation of the EVM in the K Framework (and other EVM formalisations...)
 - Deductive verification of smart contracts in Dafny -- must start with a contract written in Dafny
@@ -109,12 +111,14 @@ summary of work, subtasks
 -->
 
 **Milestone 1: EVM Formalisation Extension and Analysis (Months 1-2)**
+
 - Analyze existing EVM formalisation in HOL4
 - Identify and implement necessary extensions
 - Develop initial mapping between EVM operations and logical constructs
 - Deliverable: Technical report on EVM formalisation analysis and extensions
 
 **Milestone 2: Core Decompilation Technology for EVM (Months 3-4)**
+
 - Implement decompilation specifications for EVM operations
 - Develop translation functions from bytecode to logical representations
 - Build proof infrastructure for validating decompilations
@@ -122,6 +126,7 @@ summary of work, subtasks
 - Deliverable: Working prototype of EVM decompilation technology with documentation
 
 **Milestone 3: Separation Logic Framework and Case Studies (Months 5-6)**
+
 - Develop separation logic predicates for EVM state
 - Create automated proof tactics for common verification patterns
 - Apply decompilation to representative smart contracts
