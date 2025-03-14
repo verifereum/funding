@@ -109,39 +109,24 @@ summary of work, subtasks
 -->
 
 **Milestone 1: EVM Formalisation Extension and Analysis (Months 1-2)**
-- Budget: $30,000 (220 hours total)
-  - Dr. Kumar: 60 hours/month × 2 months
-  - Dr. Myreen: 40 hours/month × 2 months
-  - Research Assistant: 120 hours/month × 2 months
-- Tasks:
-  - Analyze existing EVM formalisation in HOL4
-  - Identify and implement necessary extensions
-  - Develop initial mapping between EVM operations and logical constructs
-  - Deliverable: Technical report on EVM formalisation analysis and extensions
+- Analyze existing EVM formalisation in HOL4
+- Identify and implement necessary extensions
+- Develop initial mapping between EVM operations and logical constructs
+- Deliverable: Technical report on EVM formalisation analysis and extensions
 
 **Milestone 2: Core Decompilation Technology for EVM (Months 3-4)**
-- Budget: $40,000 (220 hours total)
-  - Dr. Kumar: 60 hours/month × 2 months
-  - Dr. Myreen: 40 hours/month × 2 months
-  - Research Assistant: 120 hours/month × 2 months
-- Tasks:
-  - Implement decompilation specifications for EVM operations
-  - Develop translation functions from bytecode to logical representations
-  - Build proof infrastructure for validating decompilations
-  - Initial testing on simple smart contracts
-  - Deliverable: Working prototype of EVM decompilation technology with documentation
+- Implement decompilation specifications for EVM operations
+- Develop translation functions from bytecode to logical representations
+- Build proof infrastructure for validating decompilations
+- Initial testing on simple smart contracts
+- Deliverable: Working prototype of EVM decompilation technology with documentation
 
 **Milestone 3: Separation Logic Framework and Case Studies (Months 5-6)**
-- Budget: $30,000 (220 hours total)
-  - Dr. Kumar: 60 hours/month × 2 months
-  - Dr. Myreen: 40 hours/month × 2 months
-  - Research Assistant: 120 hours/month × 2 months
-- Tasks:
-  - Develop separation logic predicates for EVM state
-  - Create automated proof tactics for common verification patterns
-  - Apply decompilation to representative smart contracts
-  - Prepare documentation and final report
-  - Deliverable: Separation logic framework for EVM with example proofs, documented case studies, and final report
+- Develop separation logic predicates for EVM state
+- Create automated proof tactics for common verification patterns
+- Apply decompilation to representative smart contracts
+- Prepare documentation and final report
+- Deliverable: Separation logic framework for EVM with example proofs, documented case studies, and final report
 
 ## Budget
 <!-- Requested grant amount and how this will be used
