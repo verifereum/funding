@@ -6,46 +6,63 @@ We will implement proof-producing [machine-code decompilation](https://www.cl.ca
 
 ### Objectives
 <!-- What are you hoping to accomplish with this grant? How do you define and measure success for this project? -->
-1. Adapt the existing machine-code decompilation framework to handle the EVM and EVM bytecode
+1. Adapt the existing machine-code decompilation framework to handle EVM state and bytecode
 2. Develop proof-producing translation from EVM bytecode to higher-level logical programs
 3. Create a separation logic framework tailored to reasoning about these EVM programs
-4. Demonstrate the practical application by decompiling and verifying select real-world smart contracts
+4. Demonstrate the practical application by decompiling and verifying example and select real-world smart contracts
 5. Success will be measured by our ability to automatically decompile EVM bytecode into logical specifications that are amenable to higher-level reasoning and proof
 
 ### Outcomes
 <!-- How does this project benefit the greater Ethereum ecosystem? -->
-This project will enable formal verification of EVM smart contracts at a higher level of abstraction, making sophisticated verification techniques more accessible to developers. It will reduce the gap between implementation and specification, allowing for stronger guarantees about smart contract behavior. Ultimately, this technology will help improve the security and reliability of the Ethereum ecosystem by providing more powerful and intuitive verification tools that can catch subtle bugs and vulnerabilities before deployment.
+This project enables the following workflow:
+
+1. Start with an EVM program (e.g., a deployed smart contract) produced by any means, e.g., compiled from Solidity, written in Huff, etc.
+2. Derive a functional program encompassing the behaviour of the EVM program using clean abstractions, together with a proof of equivalence of behaviour with the original program.
+3. Use any technique to build assurance in the original program by inspecting or reasoning about the functional program. This might include manual auditing or interactive theorem proving. The theorems produced in step 2 ensure that conclusions drawn about the functional program are also true of the original EVM program.
+
+Therefore, this project will enable formal verification of EVM smart contracts at a higher level of abstraction, and with a higher level of assurance than almost all current approaches to formal verification of EVM programs. Our work will reduce the gap between implementation and specification, allowing for stronger guarantees about smart contract behavior. Ultimately, this technology will help improve the security and reliability of the Ethereum ecosystem by providing more powerful and intuitive verification tools that can catch subtle bugs and vulnerabilities before deployment.
 
 ## Grant Scope
 <!-- What are you going to research? What is the expected output? -->
-Our research will focus on adapting Magnus Myreen's decompilation technology to work with EVM bytecode. We will develop the necessary infrastructure to translate EVM operations into higher-level logical constructs, with particular emphasis on handling EVM-specific features such as gas, storage, and the memory model. The expected output includes:
+Our research will focus on adapting Magnus Myreen's proof-producing decompilation technology to work with EVM bytecode.
+This technology has previously only been used for machine code for traditional CPUs.
+We will develop the necessary infrastructure to translate EVM operations into higher-level logical constructs, with particular emphasis on handling EVM-specific features such as gas, storage, and the memory model.
 
-1. A formal implementation of the decompilation technology for EVM in HOL4
-2. A separation logic framework tailored to reasoning about EVM programs
+The expected output includes:
+
+1. A separation logic framework tailored to reasoning about EVM programs and to work with proof-producing decompilation
+2. An implementation in HOL4 of proof-producing decompilation for EVM programs
 3. Case studies demonstrating the application of our technology to verify representative smart contracts
-4. An academic paper explaining the insights gleaned from our work and explaining how to use the technology
-5. Open-source code and guides integrating with the existing Verifereum project's EVM formalisation
+4. An academic paper announcing that proof-producing decompilation is applicable to the EVM setting, summarising our findings and insights
+5. Open-source code and accessible guides on using this work, integrating with the existing Verifereum project's EVM formalisation
 
 ## Related Work
 <!-- What existing research is relevant to your project?
 What is the specific gap your research is addressing within this context? -->
-The Verifereum project has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's research on decompilation into logic has been successfully applied to various architectures, including x86, ARM, and MIPS, demonstrating its versatility and effectiveness.
+[The Verifereum project](https://verifereum.org), which we are extending, has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's [research on decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) into logic has been successfully applied to various architectures, including x86, ARM, and MIPS, demonstrating its versatility and effectiveness.
 
-Other relevant work includes:
-- The K Framework's formalisation of EVM (KEVM)
+The gaps we are filling:
+- More expressive logic than many other approaches to verification of EVM programs, which means we can verify deeper correctness properties
+- Scalable expressivity: we can automate our proofs but, in cases where automation fails, there is always the option to do fully interactive proof for the hard parts
+- Trustworthiness of the underlying theorem prover HOL4, with its conservative design and small well-reviewed kernel
+
+Related work includes:
+- **TODO**
+- Runtime Verification's KEVM formalisation of the EVM in the K Framework (and other EVM formalisations...)
+- Deductive verification of smart contracts in Dafny -- must start with a contract written in Dafny
+- seL4 and other BA or decompilation work in Isabelle
+- HOLBA
 - DeepSEA and Scilla, which provide high-level languages with formal semantics that compile to EVM
 - The Certora Prover and similar tools that use SMT solvers for EVM verification
-
-The specific gap our research addresses is the ability to directly reason about existing EVM bytecode at a higher level of abstraction without requiring developers to use specific languages or frameworks during development. Our approach will allow post-hoc verification of any EVM bytecode, providing a universal verification approach regardless of the source language or compiler used.
 
 ## Project Team
 <!-- How many people are working on this project?
 Please list their names and roles for the project as well as how many hours per month will each person work on this project?
 -->
 
-- Principal Investigator: Dr. Ramana Kumar - Project lead and formal verification expert (60 hours/month)
-- Co-Investigator: Dr. Magnus Myreen - Decompilation technology expert (40 hours/month)
-- Research Assistant: [To be hired] - HOL4 implementation and case studies (120 hours/month)
+- Principal Investigator: Dr. Ramana Kumar - Project lead and formal verification expert
+- Co-Investigator: Dr. Magnus Myreen - Decompilation technology expert
+- Research Assistant: [To be hired] - HOL4 implementation and case studies
 
 ### Background
 <!-- Give us a bit of info and include relevant links, if available! Please provide other projects or research papers (ideally public and/or open source), engagements or other types of proof that your team has the necessary experience to undertake the project you are applying for.
@@ -53,13 +70,14 @@ Please list their names and roles for the project as well as how many hours per 
 Any links for us to review? E.g. research papers, blog posts, etc.
 -->
 
+**TODO** use material from the Vyper compilation grant?
+
 Dr. Ramana Kumar has extensive experience in formal verification and theorem proving, particularly in the context of verified systems. He has been a key contributor to the CakeML project, developing verified compilation techniques and formal semantics for a substantial subset of ML. More recently, Dr. Kumar has been working on the Verifereum project, focusing on formalising the EVM in HOL4. His background bridges the critical domains of formal verification, functional programming, and blockchain technology.
 
 Dr. Magnus Myreen is a pioneer in decompilation technology for formal verification. His work includes:
-- CakeML (https://cakeml.org): A verified ML compiler with decompilation technology
-- "Decompilation into Logic" methodology (https://www.cl.cam.ac.uk/~mom22/jagger/)
+- [CakeML](https://cakeml.org): A verified ML compiler
+- "Decompilation into Logic" methodology (https://www.cl.cam.ac.uk/~mom22/decompilation.html)
 - Publications such as "Machine-Code Verification for Multiple Architectures" (FMCAD 2008)
-- "Automatic generation of verified decompilers for theorem provers" (ITP 2013)
 
 [The Verifereum project](https://verifereum.org) has already established a comprehensive formalisation of EVM in HOL4, which will serve as the foundation for our extensions.
 
