@@ -49,9 +49,9 @@ The gaps we are filling:
 
 Related work includes:
 
-- KEVM: (A formal verification tool for Ethereum VM bytecode)[https://dl.acm.org/doi/10.1145/3236024.3264591]
-- F*: (EVM-Vale: Formal Verification of EVM Bytecode Using Vale)[https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3]
-- Dafny: (Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny)[https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32]
+- KEVM: [A formal verification tool for Ethereum VM bytecode](https://dl.acm.org/doi/10.1145/3236024.3264591)
+- F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
+- Dafny: [Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny](https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32)
 
 - Runtime Verification's KEVM formalisation of the EVM in the K Framework (and other EVM formalisations...)
 - Deductive verification of smart contracts in Dafny -- must start with a contract written in Dafny
