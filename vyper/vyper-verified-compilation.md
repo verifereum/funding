@@ -57,7 +57,7 @@ Expected outputs include:
 
 Our project builds upon and extends several research areas:
 
-1. **EVM Formalisations**: Previous and current work includes formalisations in [K](https://doi.org/10.1109/CSF.2018.00022), [Lean4](https://github.com/NethermindEth/EVMYulLean), [Dafny](https://github.com/Consensys/evm-dafny), [ACL2](https://www.kestrel.edu/research/ethereum/), [Coq](https://doi.org/10.48550/arXiv.1810.04828), and [Isabelle/HOL](https://doi.org/10.1145/316708); additionally there are executable specifications such as [EELS](https://github.com/ethereum/execution-specs/) and [hevm](https://github.com/ethereum/hevm). Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained. Our HOL4 formalization will be both comprehensive and maintained, and leverage the strengths of HOL4. Unlike K or Dafny which are based on first-order logic, HOL4 is based on higher-order logic whose semantics are [much more expressive](https://philpapers.org/rec/FARTSV). This allows for more complex and comprehensive proofs, beyond simple assertions about a contract's expected behavior. HOL4 has been [formally proven sound](https://www.cl.cam.ac.uk/~jrh13/papers/holhol.html) and has a very small and well reviewed kernel.
+1. **EVM Formalisations**: Previous and current work includes formalisations in [K](https://doi.org/10.1109/CSF.2018.00022), [Lean4](https://github.com/NethermindEth/EVMYulLean), [Dafny](https://github.com/Consensys/evm-dafny), [ACL2](https://www.kestrel.edu/research/ethereum/), [Coq](https://doi.org/10.48550/arXiv.1810.04828), and [Isabelle/HOL](https://doi.org/10.1145/316708); additionally there are executable specifications such as [EELS](https://github.com/ethereum/execution-specs/) and [hevm](https://github.com/ethereum/hevm). Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained. Our HOL4 formalisation will be both comprehensive and maintained, and leverage the strengths of HOL4. Unlike K or Dafny which are based on first-order logic, HOL4 is based on higher-order logic whose semantics are [much more expressive](https://philpapers.org/rec/FARTSV). This allows for more complex and comprehensive proofs, beyond simple assertions about a contract's expected behavior. HOL4 has been [formally proven sound](https://www.cl.cam.ac.uk/~jrh13/papers/holhol.html) and has a very small and well reviewed kernel.
 
 2. **Verified Compilation**: Projects like [CompCert](https://doi.org/10.1145/1538788.1538814) and [CakeML](https://doi.org/10.1145/2578855.2535841) have demonstrated the feasibility of verified compilation for conventional languages. Our work extends these techniques to the domain-specific challenges of smart-contract languages.
 
@@ -71,7 +71,7 @@ The specific gap we are addressing is the lack of a verified compiler for a high
 
 Our interdisciplinary team combines expertise in formal verification, compiler development, and Ethereum technology.
 
-We have an open project structure, developing all code and proofs in the open, welcoming all contributions, and mentoring new community members. As such, not all contributors will be listed here in advance. However, we highlight the core contributors who will be leading the project and ensuring its completion:
+We have an open project structure, developing all code and proofs in public, welcoming all contributions, and mentoring new community members. As such, not all contributors will be listed here in advance. However, we highlight the core contributors who will be leading the project and ensuring its completion:
 
 1. Ramana Kumar, PhD in formal verification, user and developer of Ethereum applications, lead developer of [Verifereum](https://verifereum.org).
 
@@ -81,13 +81,13 @@ We have an open project structure, developing all code and proofs in the open, w
 
 4. Charles Cooper, lead developer of the [Vyper language and compiler](https://vyperlang.org).
 
-5. Cyberthirst, MSc, lead security engineer of the Vyper compiler
+5. Cyberthirst, MSc, lead security engineer of the Vyper compiler.
 
 ## Background and Prior Work
 
-- **Compiler Verification Expertise**: Our team includes core developers of the CakeML verified compiler and related projects, demonstrating the ability to verify complex compiler transformations in higher-order logic. The CakeML verified compiler is the only production-grade verified compiler in the world, aside from CompCert.
+- **Compiler Verification Expertise**: Our team includes core developers of the CakeML verified compiler and related projects, demonstrating the ability to verify complex compiler transformations in higher-order logic. The [CakeML verified compiler](https://cakeml.org) is the only production-grade verified compiler in the world, aside from [CompCert](https://compcert.org).
 
-- **Vyper Development Experience**: Our team includes core members of the Vyper compiler development team who bring deep knowledge of the language, its implementation challenges, and evolution plans.
+- **Vyper Development Experience**: Our team includes core members of the [Vyper compiler](https://vyperlang.org) development team who bring deep knowledge of the language, its implementation challenges, and evolution plans.
 
 - **Ethereum Expertise**: Our team includes active participants in the Ethereum ecosystem as contract developers, home-stakers, and [Rocket Pool](https://rocketpool.net) node-runners/validators, ensuring our work remains relevant to real-world needs.
 
