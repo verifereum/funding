@@ -13,7 +13,7 @@ main (stack, mem, storage, ...) =
   let mem = mstore ... mem in
     ...
 ```
-together with a theorem stating that execution of the code `code` in an appropriate context has the same effect on the machine state as the function `main` applied to that machine state in the same context.
+together with a theorem stating that execution of `code` in an appropriate context has the same effect on the machine state as the function `main` applied to that machine state in the same context. This enables a developer to draw trustworthy conclusions about `code` by reasoning about `main` instead (including using further proof automation).
 
 ### Objectives
 <!-- What are you hoping to accomplish with this grant? How do you define and measure success for this project? -->
@@ -35,7 +35,7 @@ Therefore, this project will enable formal verification of EVM smart contracts a
 
 ## Grant Scope
 <!-- What are you going to research? What is the expected output? -->
-Our research will focus on adapting Magnus Myreen's [proof-producing decompilation technology]((https://www.cl.cam.ac.uk/~mom22/decompilation.html) to work with EVM bytecode.
+Our research will focus on adapting Magnus Myreen's [proof-producing decompilation technology](https://www.cl.cam.ac.uk/~mom22/decompilation.html) to work with EVM bytecode.
 This technology has previously only been used for machine code for traditional CPUs.
 We will develop the necessary infrastructure to translate EVM operations into higher-level logical constructs, with particular emphasis on handling EVM-specific features such as gas, storage, and the memory model.
 
@@ -161,29 +161,15 @@ Please provide an requested amount and outline of how the grant will be used. A 
 
 -->
 
-**Total Requested Amount: $100,000**
+**Total Requested Amount: $115,200**
 
 ### Budget Breakdown:
 
 **Principal Researchers Costs: $72,000**
+
 - Dr. Ramana Kumar: $36,000 (60 hours/month × 6 months × $100/hour)
 - Dr. Magnus Myreen: $36,000 (40 hours/month × 6 months × $150/hour)
 
-**Other Staff Costs: $21,600**
-- Research Assistant: $21,600 (120 hours/month × 6 months × $30/hour)
+**Other Staff Costs: $43,200**
 
-**Hardware and Computing Costs: $3,000**
-- High-performance computing resources for theorem proving
-- Development workstations for research
-
-**Software and Tools: $1,000**
-- Specialized tools and software licenses
-- Cloud services for collaboration and testing
-
-**Conference and Publication Costs: $1,400**
-- Publication fees for open-access journals
-- Presentation materials
-
-**Indirect Costs: $1,000**
-- Administrative support
-- Project management
+- Research Assistant: $43,200 (120 hours/month × 6 months × $60/hour)
