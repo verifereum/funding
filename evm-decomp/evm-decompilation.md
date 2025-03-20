@@ -1,22 +1,33 @@
-# Verification of EVM Bytecode Programs via Decompilation into Logic
+# Verification of EVM Bytecode Programs using Decompilation into Logic
 
 ## Project Abstract
 <!-- In 3-5 sentences what problem are you trying to solve? (The project abstract may be used for for the winners announcement.) -->
-We will implement proof-producing [machine-code decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) for the [Verifereum](https://verifereum.org) formalisation of the Ethereum Virtual Machine (EVM) in the [HOL4 theorem prover](https://hol-theorem-prover.org). This technology will enable reasoning about EVM bytecode programs at a higher level of abstraction using separation logic, bridging the gap between low-level bytecode and high-level program properties. By translating EVM bytecode into logical representations, we will create powerful verification tools that allow developers and auditors to formally verify smart contract properties with greater ease and confidence.
+We will implement proof-producing [machine-code decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) for the Ethereum Virtual Machine (EVM) formalised by [Verifereum](https://verifereum.org) in the [HOL4 theorem prover](https://hol-theorem-prover.org). This technology will enable reasoning about EVM bytecode programs at a higher level of abstraction using separation logic, bridging the gap between low-level bytecode and high-level program properties. By translating EVM bytecode into logical representations, we will create powerful verification tools that allow developers and auditors to formally verify smart contract properties with greater ease and confidence.
+
+To illustrate what we mean by machine-code decompilation, we expect to take raw bytes of EVM code such as `code = 5f6370a082315f523060205...` and automatically produce a functional program over the EVM call context and state such as
+```
+main (stack, mem, storage, ...) =
+  let stack = 0w :: stack in
+  let stack = 0x70a08231w :: stack in
+  let stack = 0w :: stack in
+  let mem = mstore ... mem in
+    ...
+```
+together with a theorem stating that execution of the code `code` in an appropriate context has the same effect on the machine state as the function `main` applied to that machine state in the same context.
 
 ### Objectives
 <!-- What are you hoping to accomplish with this grant? How do you define and measure success for this project? -->
-1. Adapt the existing machine-code decompilation framework to handle EVM state and bytecode
+1. Adapt the [existing machine-code decompilation framework](https://www.cl.cam.ac.uk/~mom22/decompilation.html) to handle EVM state and bytecode
 2. Develop proof-producing translation from EVM bytecode to higher-level logical programs
 3. Create a separation logic framework tailored to reasoning about these EVM programs
-4. Demonstrate the practical application by decompiling and verifying example and select real-world smart contracts
-5. Success will be measured by our ability to automatically decompile EVM bytecode into logical specifications that are amenable to higher-level reasoning and proof
+4. Demonstrate practicality by decompiling and verifying examples of smart contracts, including real-world deployments
+5. Measure success as our ability to automatically decompile EVM bytecode into logical specifications that are amenable to higher-level reasoning and proof
 
 ### Outcomes
 <!-- How does this project benefit the greater Ethereum ecosystem? -->
 This project enables the following workflow:
 
-1. Start with an EVM program (e.g., a deployed smart contract) produced by any means, e.g., compiled from Solidity, written in Huff, etc.
+1. Start with an EVM program (e.g., a deployed smart contract) produced by any means, e.g., compiled from [Solidity](https://soliditylang.org), written in [Huff](https://huff.sh), etc.
 2. Derive a functional program encompassing the behaviour of the EVM program using clean abstractions, together with a proof of equivalence of behaviour with the original program.
 3. Use any technique to build assurance in the original program by inspecting or reasoning about the functional program. This might include manual auditing or interactive theorem proving. The theorems produced in step 2 ensure that conclusions drawn about the functional program are also true of the original EVM program.
 
@@ -24,7 +35,7 @@ Therefore, this project will enable formal verification of EVM smart contracts a
 
 ## Grant Scope
 <!-- What are you going to research? What is the expected output? -->
-Our research will focus on adapting Magnus Myreen's proof-producing decompilation technology to work with EVM bytecode.
+Our research will focus on adapting Magnus Myreen's [proof-producing decompilation technology]((https://www.cl.cam.ac.uk/~mom22/decompilation.html) to work with EVM bytecode.
 This technology has previously only been used for machine code for traditional CPUs.
 We will develop the necessary infrastructure to translate EVM operations into higher-level logical constructs, with particular emphasis on handling EVM-specific features such as gas, storage, and the memory model.
 
