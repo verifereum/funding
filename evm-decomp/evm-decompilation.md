@@ -50,7 +50,7 @@ The expected output includes:
 ## Related Work
 <!-- What existing research is relevant to your project?
 What is the specific gap your research is addressing within this context? -->
-[The Verifereum project](https://verifereum.org), which we are extending, has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's [research on decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) into logic has been successfully applied to various architectures, including x86, ARM, and MIPS, demonstrating its versatility and effectiveness.
+[The Verifereum project](https://verifereum.org), which we are extending, has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's [research on decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) into logic has been successfully applied to various architectures, including x86, ARM, and PowerPC, demonstrating its versatility and effectiveness.
 
 The gaps we are filling:
 
@@ -58,7 +58,7 @@ The gaps we are filling:
 - Scalable expressivity: we can automate our proofs but, in cases where automation fails, there is always the option to do fully interactive proof for the hard parts
 - Trustworthiness of the underlying theorem prover HOL4, with its conservative design and small well-reviewed kernel
 
-Related work includes:
+Related work on verification of EVM programs and smart contracts are [listed here](https://github.com/leonardoalt/ethereum_formal_verification_overview/blob/master/README.md). Of these, the following seem to be the most significant and closest to our goals:
 
 - KEVM: [A formal verification tool for Ethereum VM bytecode](https://dl.acm.org/doi/10.1145/3236024.3264591)
 - F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
@@ -95,7 +95,7 @@ Dr. Magnus Myreen is a pioneer in decompilation technology for formal verificati
 - "Decompilation into Logic" methodology (https://www.cl.cam.ac.uk/~mom22/decompilation.html)
 - Publications such as "Machine-Code Verification for Multiple Architectures" (FMCAD 2008)
 
-[The Verifereum project](https://verifereum.org) has already established a comprehensive formalisation of EVM in HOL4, which will serve as the foundation for our extensions.
+[The Verifereum project](https://verifereum.org) has already established a comprehensive formalisation of EVM in HOL4, which will serve as the foundation for our work.
 
 ## Methodology
 <!-- How do you plan to achieve your research objectives? -->
