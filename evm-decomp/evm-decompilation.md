@@ -4,7 +4,7 @@
 <!-- In 3-5 sentences what problem are you trying to solve? (The project abstract may be used for for the winners announcement.) -->
 We will implement proof-producing [machine-code decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) for the Ethereum Virtual Machine (EVM) formalised by [Verifereum](https://verifereum.org) in the [HOL4 theorem prover](https://hol-theorem-prover.org). This technology will enable reasoning about EVM bytecode programs at a higher level of abstraction using separation logic, bridging the gap between low-level bytecode and high-level program properties. By translating EVM bytecode into logical representations, we will create powerful verification tools that allow developers and auditors to formally verify smart contract properties with greater ease and confidence.
 
-To illustrate what we mean by machine-code decompilation, we expect to take raw bytes of EVM code such as `code = 5f6370a082315f523060205...` and automatically produce a functional program over the EVM call context and state such as
+To illustrate what we mean by machine-code decompilation, we expect to take raw bytes of EVM code such as `code = 5f6370a082315f5230602052...` and automatically produce a functional program over the EVM call context and state such as
 ```
 main (stack, mem, storage, ...) =
   let stack = 0w :: stack in
