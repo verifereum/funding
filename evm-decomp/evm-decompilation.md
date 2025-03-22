@@ -55,21 +55,24 @@ What is the specific gap your research is addressing within this context? -->
 The gaps we are filling:
 
 - More expressive logic than many other approaches to verification of EVM programs, which means we can verify deeper correctness properties
-- Scalable expressivity: we can automate our proofs but, in cases where automation fails, there is always the option to do fully interactive proof for the hard parts
-- Trustworthiness of the underlying theorem prover HOL4, with its conservative design and small well-reviewed kernel
+- Scalable expressivity: we can automate our proofs but, where automation fails, there is always the option to fill out the hard parts with fully interactive proof
+- Trustworthiness of the underlying theorem prover [HOL4](https://hol-theorem-prover.org), with its conservative design and small well-reviewed kernel
 
-Related work on verification of EVM programs and smart contracts are [listed here](https://github.com/leonardoalt/ethereum_formal_verification_overview/blob/master/README.md). Of these, the following seem to be the most significant and closest to our goals:
+Some related work on verification of EVM programs and smart contracts is listed in [this linked repository](https://github.com/leonardoalt/ethereum_formal_verification_overview/blob/master/README.md), and others can be found for example at [this website](https://formalverification.xyz). The following items, from these lists and beyond, seem to be the most significant and closest to our goals:
 
 - KEVM: [A formal verification tool for Ethereum VM bytecode](https://dl.acm.org/doi/10.1145/3236024.3264591)
+  - This work shares our goal of making an accurate and complete formalisation of the EVM (without, e.g., over-approximations in the model) and even goes further than the Verifereum EVM semantics by modelling all the previous versions of the EVM from past hard forks rather than just the latest live version. When it comes to proofs on top of this semantics, we believe a formalisation in HOL is more appropriate than the K language (although it would be good to prove the two specifications equivalent) because HOL is a more expressive logic for describing correctness properties at the application level.
 - F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
 - Dafny: [Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny](https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32)
 
+<!--
 - Runtime Verification's KEVM formalisation of the EVM in the K Framework (and other EVM formalisations...)
 - Deductive verification of smart contracts in Dafny -- must start with a contract written in Dafny
 - seL4 and other BA or decompilation work in Isabelle
 - HOLBA
 - DeepSEA and Scilla, which provide high-level languages with formal semantics that compile to EVM
 - The Certora Prover and similar tools that use SMT solvers for EVM verification
+-->
 
 ## Project Team
 <!-- How many people are working on this project?
