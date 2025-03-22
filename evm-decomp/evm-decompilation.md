@@ -65,6 +65,7 @@ Some related work on verification of EVM programs and smart contracts is listed 
 - Nethermind EVMYulLean: [Executable formal model of the EVM and Yul in Lean 4](https://github.com/NethermindEth/EVMYulLean)
   - This is perhaps the closest related work on the formal specification of the EVM, since it is an accurate and comprehensive model of the latest live EVM in an expressive logic (the [Lean](https://lean-lang.org) language). By comparison, our proposed work benefits from the existing infrastructure for decompilation into logic implement in HOL4 (which is not present in Lean4).
 - F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
+  - This work shares some aspects with our proposal, since they specify EVM and then use Vale to lift EVM code into higher-level representations that are provably sound representations of the original EVM code. This work has the limitation that all proof goals are ultimately sent to SMT solvers which inherently limits the specifications one can prove to those that fit within what F\* can express in its specifications. F\* does not support general-purpose interactive theorem proving like tools such as HOL4 or Lean4.
 - Dafny: [Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny](https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32)
 
 <!--
