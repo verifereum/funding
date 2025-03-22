@@ -62,6 +62,7 @@ Some related work on verification of EVM programs and smart contracts is listed 
 
 - KEVM: [A formal verification tool for Ethereum VM bytecode](https://dl.acm.org/doi/10.1145/3236024.3264591)
   - This work shares our goal of making an accurate and complete formalisation of the EVM (without, e.g., over-approximations in the model) and even goes further than the Verifereum EVM semantics by modelling all the previous versions of the EVM from past hard forks rather than just the latest live version. When it comes to proofs on top of this semantics, we believe a formalisation in HOL is more appropriate than the K language (although it would be good to prove the two specifications equivalent) because HOL is a more expressive logic for describing correctness properties at the application level.
+- Nethermind EVMYulLean: [Executable formal model of the EVM and Yul in Lean 4](https://github.com/NethermindEth/EVMYulLean)
 - F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
 - Dafny: [Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny](https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32)
 
