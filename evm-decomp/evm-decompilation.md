@@ -79,8 +79,8 @@ Some related work on verification of EVM programs and smart contracts is listed 
 Please list their names and roles for the project as well as how many hours per month will each person work on this project?
 -->
 
-- Principal Investigator: Dr. Ramana Kumar - Project lead and formal verification expert
-- Co-Investigator: Dr. Magnus Myreen - Decompilation technology expert
+- Principal Investigator: Ramana Kumar - Project lead and formal verification expert
+- Co-Investigator: Magnus Myreen - Proof-producing decompilation expert
 - Research Assistant: [To be hired] - HOL4 implementation and case studies
 
 ### Background
@@ -89,14 +89,9 @@ Please list their names and roles for the project as well as how many hours per 
 Any links for us to review? E.g. research papers, blog posts, etc.
 -->
 
-**TODO** use material from the Vyper compilation grant?
+Ramana has a PhD in computer science and has done extensive [academic research](https://scholar.google.com/citations?user=OyX1-qYAAAAJ) on formal verification. He is a world leading expert on compiler verification and a key contributor to [CakeML](https://cakeml.org), a verified implementation of ML and one of a handful of formally verified compilers. An active contributor to the Rocket Pool liquid staking ecosystem on Ethereum, user of several decentralised finance (DeFi) protocols, and smart contract author himself, Ramana combines his expertise in formal verification with a deep knowledge of the EVM. His background makes him uniquely qualified to build the Verifereum EVM formal verification framework, and Verifereum-based projects for application verification (including via proof-producing decompilation).
 
-Dr. Ramana Kumar has extensive experience in formal verification and theorem proving, particularly in the context of verified systems. He has been a key contributor to the CakeML project, developing verified compilation techniques and formal semantics for a substantial subset of ML. More recently, Dr. Kumar has been working on the Verifereum project, focusing on formalising the EVM in HOL4. His background bridges the critical domains of formal verification, functional programming, and blockchain technology.
-
-Dr. Magnus Myreen is a pioneer in decompilation technology for formal verification. His work includes:
-- [CakeML](https://cakeml.org): A verified ML compiler
-- "Decompilation into Logic" methodology (https://www.cl.cam.ac.uk/~mom22/decompilation.html)
-- Publications such as "Machine-Code Verification for Multiple Architectures" (FMCAD 2008)
+Magnus Myreen is a professor at Chalmers University with a comprehensive [academic career](https://scholar.google.com/citations?user=XfqNgKwAAAAJ). He is like Ramana a key contributor to CakeML and has expertise in compiler verification and in developing proof automation in HOL; Magnus additionally pioneered the bootstrapping techniques used in CakeML in previous work on [Jitawa](https://www.cl.cam.ac.uk/~mom22/jitawa). Magnus is the originator for the proof-producing decompilation methods and technology, highlighted in papers such as _[Translation Validation for a Verified OS Kernel](https://www.cl.cam.ac.uk/~mom22/pldi13.pdf)_, that we intend to apply to the EVM in this work.
 
 [The Verifereum project](https://verifereum.org) has already established a comprehensive formalisation of EVM in HOL4, which will serve as the foundation for our work.
 
