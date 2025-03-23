@@ -116,7 +116,7 @@ Magnus Myreen is a professor at Chalmers University with a comprehensive [academ
 <!-- How do you plan to achieve your research objectives? -->
 Our approach consists of four main phases:
 
-1. **Analysis and Extension of EVM Formalisation**: We will analyse the existing HOL4 formalisation of EVM from the Verifereum project and extend it as needed to support decompilation.
+1. **Analysis and Extension of EVM Formalisation**: We will analyse the existing HOL4 formalisation of EVM from the Verifereum project and extend it as needed to support proof-producing decompilation.
 
 2. **Development of EVM Decompilation Framework**: We will adapt Magnus Myreen's decompilation technology to work with EVM bytecode. This involves:
    - Developing decompilation specifications for EVM operations
@@ -124,7 +124,7 @@ Our approach consists of four main phases:
    - Handling EVM-specific features (gas, storage, memory model)
 
 3. **Separation Logic Framework**: We will develop a separation logic framework tailored to reasoning about EVM programs, including:
-   - Heap models for EVM storage and memory
+   - Heap model that covers EVM storage, memory, and other aspects of the EVM state
    - Pre/post-condition specifications for common patterns
    - Proof automation for separation logic reasoning
 
@@ -141,18 +141,18 @@ summary of work, subtasks
 
 **Milestone 1: EVM Formalisation Extension and Analysis (Months 1-2)**
 
-- Analyse existing EVM formalisation in HOL4
-- Identify and implement necessary extensions
-- Develop initial mapping between EVM operations and logical constructs
-- Deliverable: Technical report on EVM formalisation analysis and extensions
+- Analyse the existing EVM formalisation in HOL4
+- Identify and implement any changes or extensions needed to support decompilation
+- Develop initial versions of the separation-logic heap predicates and other critical definitions for the decompiler
+- Deliverable: Brief technical report on the state of the EVM model and on any changes that were made
 
 **Milestone 2: Core Decompilation Technology for EVM (Months 3-4)**
 
 - Implement decompilation specifications for EVM operations
 - Develop translation functions from bytecode to logical representations
-- Build proof infrastructure for validating decompilations
+- Build proof infrastructure for producing decompilation theorems
 - Initial testing on simple smart contracts
-- Deliverable: Working prototype of EVM decompilation technology with documentation
+- Deliverable: Working prototype of EVM decompilation technology with basic documentation
 
 **Milestone 3: Separation Logic Framework and Case Studies (Months 5-6)**
 
