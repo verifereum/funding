@@ -52,21 +52,30 @@ The expected output includes:
 What is the specific gap your research is addressing within this context? -->
 [The Verifereum project](https://verifereum.org), which we are extending, has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's [research on decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) into logic has been successfully applied to various architectures, including x86, ARM, and PowerPC, demonstrating its versatility and effectiveness.
 
-The gaps we are filling:
+Apart from the main novelty of extending the work on decompilation to the EVM, the gaps we are filling include:
 
 - More expressive logic than many other approaches to verification of EVM programs, which means we can verify deeper correctness properties
 - Scalable expressivity: we can automate our proofs but, where automation fails, there is always the option to fill out the hard parts with fully interactive proof
 - Trustworthiness of the underlying theorem prover [HOL4](https://hol-theorem-prover.org), with its conservative design and small well-reviewed kernel
 
-Some related work on verification of EVM programs and smart contracts is listed in [this linked repository](https://github.com/leonardoalt/ethereum_formal_verification_overview/blob/master/README.md), and others can be found for example at [this website](https://formalverification.xyz). The following items, from these lists and beyond, seem to be the most significant and closest to our goals:
+Some related work on verification of EVM programs and smart contracts is listed in [this linked repository](https://github.com/leonardoalt/ethereum_formal_verification_overview/blob/master/README.md), and more can be found for example at [this website](https://formalverification.xyz). The following items, from these lists and beyond, seem to be the most significant and closest to our goals:
 
-- KEVM: [A formal verification tool for Ethereum VM bytecode](https://dl.acm.org/doi/10.1145/3236024.3264591)
-  - This work shares our goal of making an accurate and complete formalisation of the EVM (without, e.g., over-approximations in the model) and even goes further than the Verifereum EVM semantics by modelling all the previous versions of the EVM from past hard forks rather than just the latest live version. When it comes to proofs on top of this semantics, we believe a formalisation in HOL is more appropriate than the K language (although it would be good to prove the two specifications equivalent) because HOL is a more expressive logic for describing correctness properties at the application level.
-- Nethermind EVMYulLean: [Executable formal model of the EVM and Yul in Lean 4](https://github.com/NethermindEth/EVMYulLean)
-  - This is perhaps the closest related work on the formal specification of the EVM, since it is an accurate and comprehensive model of the latest live EVM in an expressive logic (the [Lean](https://lean-lang.org) language). By comparison, our proposed work benefits from the existing infrastructure for decompilation into logic implement in HOL4 (which is not present in Lean4).
-- F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
-  - This work shares some aspects with our proposal, since they specify EVM and then use Vale to lift EVM code into higher-level representations that are provably sound representations of the original EVM code. This work has the limitation that all proof goals are ultimately sent to SMT solvers which inherently limits the specifications one can prove to those that fit within what F\* can express in its specifications. F\* does not support general-purpose interactive theorem proving like tools such as HOL4 or Lean4.
-- Dafny: [Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny](https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32)
+### KEVM: [A formal verification tool for Ethereum VM bytecode](https://dl.acm.org/doi/10.1145/3236024.3264591)
+
+  - This work shares our goal of making an accurate and complete formalisation of the EVM (without, e.g., over-approximations in the model) and even goes further than the Verifereum EVM semantics by modelling all the previous versions of the EVM from past hard forks rather than just the latest live version.
+  - When it comes to proofs on top of this semantics, we believe a formalisation in HOL is more appropriate than the K language (although it would be good to prove the two specifications equivalent) because HOL is a more expressive logic for describing correctness properties at the application level.
+
+### Nethermind EVMYulLean: [Executable formal model of the EVM and Yul in Lean 4](https://github.com/NethermindEth/EVMYulLean)
+
+  - This is perhaps the closest related work on the formal specification of the EVM, since it is an accurate and comprehensive model of the latest live EVM in an expressive logic (the [Lean](https://lean-lang.org) language).
+  - By comparison, our proposed work benefits from the existing infrastructure for decompilation into logic implement in HOL4 (which is not present in Lean4).
+
+### F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
+
+  - This work shares some aspects with our proposal, since they specify EVM and then use Vale to lift EVM code into higher-level representations that are provably sound representations of the original EVM code.
+  - This work has the limitation that all proof goals are ultimately sent to SMT solvers which inherently limits the specifications one can prove to those that fit within what F\* can express in its specifications. F\* does not support general-purpose interactive theorem proving like tools such as HOL4 or Lean4.
+
+### Dafny: [Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny](https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32)
 
 <!--
 - Runtime Verification's KEVM formalisation of the EVM in the K Framework (and other EVM formalisations...)
@@ -82,7 +91,7 @@ Some related work on verification of EVM programs and smart contracts is listed 
 Please list their names and roles for the project as well as how many hours per month will each person work on this project?
 -->
 
-- Principal Investigator: Ramana Kumar - Project lead and formal verification expert
+- Principal Investigator: Ramana Kumar - Project lead and expert in both the EVM and formal verification
 - Co-Investigator: Magnus Myreen - Proof-producing decompilation expert
 - Research Assistant: [To be hired] - HOL4 implementation and case studies
 
@@ -102,7 +111,7 @@ Magnus Myreen is a professor at Chalmers University with a comprehensive [academ
 <!-- How do you plan to achieve your research objectives? -->
 Our approach consists of four main phases:
 
-1. **Analysis and Extension of EVM Formalisation**: We will analyze the existing HOL4 formalisation of EVM from the Verifereum project and extend it as needed to support decompilation.
+1. **Analysis and Extension of EVM Formalisation**: We will analyse the existing HOL4 formalisation of EVM from the Verifereum project and extend it as needed to support decompilation.
 
 2. **Development of EVM Decompilation Framework**: We will adapt Magnus Myreen's decompilation technology to work with EVM bytecode. This involves:
    - Developing decompilation specifications for EVM operations
@@ -114,7 +123,7 @@ Our approach consists of four main phases:
    - Pre/post-condition specifications for common patterns
    - Proof automation for separation logic reasoning
 
-4. **Case Studies and Documentation**: We will apply our technology to decompile and verify representative smart contracts, document our methodology, and create tutorials for other researchers.
+4. **Case Studies and Documentation**: We will apply our technology to decompile and verify representative smart contracts, and create accessible material to help others understand our approach
 
 ### Timeline
 <!-- Please include a brief explanation on the milestones/roadmap, along with expected deliverables. Also outline how the funds will be used for the research project and or members of the team.
@@ -127,7 +136,7 @@ summary of work, subtasks
 
 **Milestone 1: EVM Formalisation Extension and Analysis (Months 1-2)**
 
-- Analyze existing EVM formalisation in HOL4
+- Analyse existing EVM formalisation in HOL4
 - Identify and implement necessary extensions
 - Develop initial mapping between EVM operations and logical constructs
 - Deliverable: Technical report on EVM formalisation analysis and extensions
@@ -162,7 +171,9 @@ Please provide an requested amount and outline of how the grant will be used. A 
 
 -->
 
-**Total Requested Amount: $115,200**
+**Total Requested Amount: $126,720**, including a maximum of 10% overhead (indirect cost) for the university ($115,200 excluding overhead).
+
+There is room for flexibility in this budget if necessary in the rates and/or hours, which are estimates for the work required to deliver the milestones.
 
 ### Budget Breakdown:
 
