@@ -42,17 +42,20 @@ Verifereum is a formal model of the EVM in higher-order logic  intended to suppo
 
 The Verifereum project aims to maintain an up-to-date EVM semantics that accurately models on-chain execution for all applications live on mainnet (and other EVM chains), and hence to remain relevant as Ethereum hardforks are deployed.
 
-The blockchain audit industry, currently worth $3bn* is expected to grow tenfold over the next 5 years (https://www.marketsandmarkets.com/PressReleases/blockchain- security.asp), signaling the tremendous demand for rigorous scrutiny of on-chain apps. By mathematically proving that a contract behaves exactly as expected relative to a clearly defined specification, formal verification offers the highest assurance of vulnerability-free code.
+The blockchain audit industry, currently worth $3bn* is expected to grow tenfold over the next 5 years (https://www.marketsandmarkets.com/PressReleases/blockchain-security.asp), signaling the tremendous demand for rigorous scrutiny of on-chain apps. By mathematically proving that a contract behaves exactly as expected relative to a clearly defined specification, formal verification offers the highest assurance of vulnerability-free code.
 
 Verifereum's expected outcomes include but are not limited to:
-• Smart contract security: Verifereum will enable developers to mathematically prove that their smart contracts are exempt from all exploits of a certain type. This will, in turn, enhance the overall trust in Ethereum as a platform.
-• Compiler reliability: The Ethereum ecosystem, with its reliance on a couple of languages with no verified compilers, is particularly vulnerable to compiler bugs. By focusing on compiler verification, starting with Vyper, Verifereum will increase confidence in the correctness of compiled smart contract code.
-• Advancement of formal methods: Verifereum will push forward the state-of- the-art in formal verification on Ethereum and provide a more expressive and trustworthy framework for developers to work with.
-• Community building and education: Drawing upon the experience and network acquired while building the CakeML community, Verifereum will help grow the pool of developers skilled in formal verification methods. We plan to do so by onboarding technical and non-technical contributors, providing documentation and tutorials, and organising outreach events.
+
+- Smart contract security: Verifereum will enable developers to mathematically prove that their smart contracts are exempt from all exploits of a certain type. This will, in turn, enhance the overall trust in Ethereum as a platform.
+- Compiler reliability: The Ethereum ecosystem, with its reliance on a couple of languages with no verified compilers, is particularly vulnerable to compiler bugs. By focusing on compiler verification, starting with Vyper, Verifereum will increase confidence in the correctness of compiled smart contract code.
+- Advancement of formal methods: Verifereum will push forward the state-of- the-art in formal verification on Ethereum and provide a more expressive and trustworthy framework for developers to work with.
+- Community building and education: Drawing upon the experience and network acquired while building the CakeML community, Verifereum will help grow the pool of developers skilled in formal verification methods. We plan to do so by onboarding technical and non-technical contributors, providing documentation and tutorials, and organising outreach events.
 
 *$8bn+ has been lost in various smart contact hacks since the launch of Ethereum.
     
 ## Have you been involved with projects or organisations relevant to this project before? And if so, can you tell us a bit about your contributions?
+
+[check other grant apps (Vyper, too)]
 
 # Requested support
 
@@ -61,10 +64,12 @@ Verifereum's expected outcomes include but are not limited to:
 ### Explain what the requested budget will be used for? Does the project have other funding sources, both past and present?
 <!-- (If you want, you can in addition attach a budget at the bottom of the form) -->
 
-1. Developer salaries x3 months
-2. Ad hoc costs associated with brand awareness
+1. Developer salaries x3 months (€100 per hour per person, ~€72,000 for 2x developers @ 120hrs per month) but capped at maximum funding allocation
+3. other ad hoc costs associated with brand awareness
 
 # Compare your own project with existing or historical efforts.
+
+[overview of formal verification of Ethereum applications, different ways based on XYZ, dafny, fuzzing] better than prev ... 
 
 Verifereum has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's [research on decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) into logic has been successfully applied to various architectures, including x86, ARM, and MIPS, demonstrating its versatility and effectiveness.
 
@@ -90,7 +95,10 @@ Related work includes:
 
 # What are significant technical challenges you expect to solve during the project, if any?
 
-*TO-DO*
+- Complete executable specification of the EVM in logic
+- Enable trustworthy high level reasoning about the bytecode programs
+- First production grade verified complier for Ethereum
+
 
 # Describe the ecosystem of the project, and how you will engage with relevant actors and promote the outcomes?
 
@@ -121,6 +129,7 @@ Related work includes:
 > Ultimately, Verifereum will engage with relevant actors via wider community engagement including but not limited to:
 > - attendance at conferences and / or workshops
 > - online contributions via Discord, Zulip (including the Verifereum community itself), e.g., Rocket Pool (etc.)
+> - representation within formal verification community at the Ethereum Foundation 
 > - academic, research based collaborations
 >
 > Verifereum will be active and promote work and progress on other channels such as X, @Verifereum
