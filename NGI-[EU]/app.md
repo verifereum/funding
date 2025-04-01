@@ -75,36 +75,25 @@ The relevance to Verifereum is clear: we intend to apply the same level of verif
 
 # Compare your own project with existing or historical efforts.
 
-[overview of formal verification of Ethereum applications, different ways based on XYZ, dafny, fuzzing] better than prev ...
+Verifereum seeks to apply rigorous formal verification to applications that run on the Ethereum blockchain, which encompasses building a formal model of Ethereum's virtual machine (the EVM) and developing techniques and infrastructure for verifying application (smart contract) code. There are several existing and historical efforts aimed at parts of this overall vision. We reference some of the most relevant work below, but note that more pointers to related work on verification of EVM programs and smart contracts can be found for example at [this list](https://github.com/leonardoalt/ethereum_formal_verification_overview/blob/master/README.md), or on [this website](https://formalverification.xyz).
 
-Verifereum has already made significant progress in formalising the EVM in HOL4, providing a solid foundation for our work. Magnus Myreen's [research on decompilation](https://www.cl.cam.ac.uk/~mom22/decompilation.html) into logic has been successfully applied to various architectures, including x86, ARM, and MIPS, demonstrating its versatility and effectiveness.
+Previous and current work on formalising the EVM includes formalisations in [K](https://doi.org/10.1109/CSF.2018.00022), [Lean4](https://github.com/NethermindEth/EVMYulLean), [Dafny](https://github.com/Consensys/evm-dafny), [ACL2](https://www.kestrel.edu/research/ethereum/), [F\*](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3), [Coq](https://doi.org/10.48550/arXiv.1810.04828), and [Isabelle/HOL](https://doi.org/10.1145/316708); additionally there are executable specifications such as [EELS](https://github.com/ethereum/execution-specs/) and [hevm](https://github.com/ethereum/hevm). Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained.
 
-The gaps we are filling:
+Our formalisation in [HOL4](https://hol-theorem-prover.org) for Verifereum is distinguished by the following:
 
-- More expressive logic than many other approaches to verification of EVM programs, which means we can verify deeper correctness properties
-- Scalable expressivity: we can automate our proofs but, in cases where automation fails, there is always the option to do fully interactive proof for the hard parts
-- Trustworthiness of the underlying theorem prover HOL4, with its conservative design and small well-reviewed kernel
-
-Related work includes:
-
-- KEVM: [A formal verification tool for Ethereum VM bytecode](https://dl.acm.org/doi/10.1145/3236024.3264591)
-- F\*: [EVM-Vale: Formal Verification of EVM Bytecode Using Vale](https://link.springer.com/chapter/10.1007/978-981-97-0006-6_3)
-- Dafny: [Formal and Executable Semantics of the Ethereum Virtual Machine in Dafny](https://dl.acm.org/doi/10.1007/978-3-031-27481-7_32)
-- Runtime Verification's KEVM formalisation of the EVM in the K Framework (and other EVM formalisations...)
-- Deductive verification of smart contracts in Dafny -- must start with a contract written in Dafny
-- seL4 and other BA or decompilation work in Isabelle
-- HOLBA
-- DeepSEA and Scilla, which provide high-level languages with formal semantics that compile to EVM
-- The Certora Prover and similar tools that use SMT solvers for EVM verification
-
-**EVM Formalisations**: Previous and current work includes formalisations in [K](https://doi.org/10.1109/CSF.2018.00022), [Lean4](https://github.com/NethermindEth/EVMYulLean), [Dafny](https://github.com/Consensys/evm-dafny), [ACL2](https://www.kestrel.edu/research/ethereum/), [Coq](https://doi.org/10.48550/arXiv.1810.04828), and [Isabelle/HOL](https://doi.org/10.1145/316708); additionally there are executable specifications such as [EELS](https://github.com/ethereum/execution-specs/) and [hevm](https://github.com/ethereum/hevm). Each of these approaches has different strengths and weaknesses, although some are incomplete or no longer maintained. Our HOL4 formalisation will be both comprehensive and maintained, and leverage the strengths of HOL4. Unlike K or Dafny which are based on first-order logic, HOL4 is based on higher-order logic whose semantics are [much more expressive](https://philpapers.org/rec/FARTSV). This allows for more complex and comprehensive proofs, beyond simple assertions about a contract's expected behaviour. HOL4 has been [formally proven sound](https://www.cl.cam.ac.uk/~jrh13/papers/holhol.html) and has a very small and well reviewed kernel.
+- We intend to remain a comprehensive and maintained EVM spec, up to date for the live Ethereum network version
+- We share the goal of many of the above to be a fully accurate formalisation, without over-approximations or other modeling artefacts
+- Our formalisation is designed to support proofs of expressive theorems, unlike EELS and hevm which are for (symbolic) execution without additional proof
+- Unlike K or Dafny which are based on first-order logic, HOL4 is based on higher-order logic which has a [much more expressive](https://philpapers.org/rec/FARTSV) semantics enabling detailed specification of the behaviour of applications beyond simple properties
+- Our proofs are about the real bytecode semantics for EVM programs but we use verified compilation or proof-producing decompilation to do high-level reasoning about these programs. This we avoid the limitations of work that uses simplified models of execution disconnected from the real semantics or does low-level tedious reasoning directly at the bytecode level.
+- We are using the interactive theorem prover HOL4. This means we exceed the limits of what can be stated for and solved by SMT solvers as used by Dafny or F\*. In HOL4 (and other ITPs like Lean4 and Isabelle) arbitrarily complex properties can be proved using a combination of automated and interactive methods.
+- HOL4 is a particularly trustworthy ITP with a small, well-reviewed kernel, that can produced independently checkable proofs, and whose logic has been [formally proven sound](https://www.cl.cam.ac.uk/~jrh13/papers/holhol.html).
 
 # What are significant technical challenges you expect to solve during the project, if any?
 
 - Complete executable specification of the EVM in logic
 - Enable trustworthy high level reasoning about the bytecode programs
 - First production grade verified complier for Ethereum
-
 
 # Describe the ecosystem of the project, and how you will engage with relevant actors and promote the outcomes?
 
