@@ -91,9 +91,18 @@ Our formalisation in [HOL4](https://hol-theorem-prover.org) for Verifereum is di
 
 # What are significant technical challenges you expect to solve during the project, if any?
 
-- Complete executable specification of the EVM in logic
-- Enable trustworthy high level reasoning about the bytecode programs
-- First production grade verified complier for Ethereum
+In the Verifereum project we are tackling the following significant technical challenges:
+
+1. To produce and maintain a complete executable specification of the EVM in an
+   expressive logic suitable for proofs. As alluded to in the Related Work
+   section, this is a goal of a number of ongoing projects.
+2. To enable trustworthy high-level reasoning about EVM bytecode programs. We
+   have multiple directions towards achieving this goal including verified
+   compilation of high-level smart contract code (e.g. in Vyper), and
+   proof-producing decompilation of raw EVM bytecode into high-level functions
+   in logic. The first approach leads us to the next challenge:
+3. To build the first production-grade verified complier for Ethereum,
+   specifically for the Vyper language.
 
 # Describe the ecosystem of the project, and how you will engage with relevant actors and promote the outcomes?
 
